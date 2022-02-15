@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Navbar from "../components/Navbar";
 import Section from "../components/Section";
 
 const Home = () => {
@@ -11,18 +12,9 @@ const Home = () => {
                     content="initial-scale=1.0, width=device-width"
                 />
             </Head>
-            <div className="grid justify-center bg-green-700 max-w-4xl mx-auto p-4">
+            <div className="grid justify-center bg-green-700 max-w-4xl mx-auto p-4 pt-8">
                 <header className="mb-8">
-                    <nav className="mb-8 text-white">
-                        <ul className="flex flex-row justify-around">
-                            <li className="hover:text-black transition-all ease-linear">
-                                <a href="#about">About</a>
-                            </li>
-                            <li className="hover:text-black transition-all ease-linear">
-                                <a href="#projects">Projects</a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <Navbar />
                     <h1 className="text-5xl text-white text-center">
                         Hi, I'm Dominik
                     </h1>
