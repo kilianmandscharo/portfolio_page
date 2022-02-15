@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Section from "../components/Section";
 
 const Home = () => {
     return (
@@ -10,7 +11,6 @@ const Home = () => {
                     content="initial-scale=1.0, width=device-width"
                 />
             </Head>
-
             <div className="grid justify-center bg-green-700 max-w-4xl mx-auto p-4">
                 <header className="mb-8">
                     <nav className="mb-8 text-white">
@@ -27,28 +27,38 @@ const Home = () => {
                         Hi, I'm Dominik
                     </h1>
                 </header>
-                <section id="about">
-                    <div className="flex justify-around items-center">
-                        <div className="h-1 w-3/12 bg-white" />
-                        <h2 className="text-4xl text-white text-center mx-2">
-                            About
-                        </h2>
-                        <div className="h-1 w-3/12 bg-white" />
-                    </div>
+                <Section name="About">
                     <p>
                         My name is Dominik Heller. I like writing software with
                         a main interest in front-end web development.
                     </p>
-                </section>
-                <section id="projects">
-                    <div className="flex justify-around items-center">
-                        <div className="h-1 w-3/12 bg-white" />
-                        <h2 className="text-4xl text-white text-center mx-2">
-                            Projects
-                        </h2>
-                        <div className="h-1 w-3/12 bg-white" />
-                    </div>
-                </section>
+                    <p>
+                        During the second semester of my Media Studies master's
+                        program at the University of Regensburg I learned the
+                        basics of HTML and CSS. Simultaneously approaching
+                        digital computers from a theoretical perspective,
+                        learning about their fundamental workings, early history
+                        and present as well as future potential in the form of
+                        AI kindled my interest in programming even more. Thus it
+                        so happened, that in the following semesters I took
+                        classes for programming in C and Python, for data
+                        analysis and visualization, and taught myself JavaScript
+                        and React. At the end of this period, and therefore once
+                        again intertwining the practical and theoretical, I
+                        earned a master's degree with a thesis about learning
+                        machines, mostly focusing on the history of Cybernetics
+                        and Deep Learning.
+                    </p>
+                    <p>
+                        In this time and since then I have finished a few
+                        projects, some of which I want to display on this page.
+                    </p>
+                </Section>
+                <Section name="Projects">
+                    <p>Runner</p>
+                    <p>Wortspiel</p>
+                    <p>Visualizing Algorithms</p>
+                </Section>
             </div>
         </>
     );

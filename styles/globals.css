@@ -8,6 +8,10 @@ html {
     background-color: beige;
 }
 
+p {
+    margin-bottom: 1rem;
+}
+
 *,
 *:before,
 *:after {
