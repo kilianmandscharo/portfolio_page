@@ -16,7 +16,7 @@ const Home = () => {
                     <nav className="mb-8 text-white">
                         <ul className="flex flex-row justify-around">
                             <li className="hover:text-black transition-all ease-linear">
-                                <a href="#content">About</a>
+                                <a href="#about">About</a>
                             </li>
                             <li className="hover:text-black transition-all ease-linear">
                                 <a href="#projects">Projects</a>
@@ -39,8 +39,8 @@ const Home = () => {
                         digital computers from a theoretical perspective,
                         learning about their fundamental workings, early history
                         and present as well as future potential in the form of
-                        AI kindled my interest in programming even more. Thus it
-                        so happened, that in the following semesters I took
+                        AI, kindled my interest in programming even more. Thus
+                        it so happened, that in the following semesters I took
                         classes for programming in C and Python, for data
                         analysis and visualization, and taught myself JavaScript
                         and React. At the end of this period, and therefore once
