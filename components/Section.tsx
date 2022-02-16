@@ -11,9 +11,7 @@ const Section = ({ children, name }: SectionProps) => {
                 <h2 className="text-4xl text-center mx-2">{name}</h2>
                 <div className="h-[2px] w-3/12 bg-black" />
             </div>
-            <div className="text-[16px] sm:text-xl sm:columns-2 gap-x-8">
-                {children}
-            </div>
+            <div className="text-[16px] sm:text-xl">{children}</div>
         </section>
     );
 };

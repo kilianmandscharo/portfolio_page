@@ -60,8 +60,10 @@ const Home = () => {
                     <Navbar />
                     <h1 className="text-5xl text-center">Hi, I'm Dominik</h1>
                 </header>
-                <About />
-                <Projects ref={projectsRef} />
+                <div className="z-10">
+                    <About />
+                    <Projects ref={projectsRef} />
+                </div>
                 <svg
                     width={width}
                     height={height}
