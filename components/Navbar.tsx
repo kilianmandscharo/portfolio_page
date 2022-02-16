@@ -1,6 +1,6 @@
 const Navbar = () => {
     return (
-        <nav className="mb-8 text-white">
+        <nav className="mb-8">
             <ul className="flex flex-row justify-around">
                 <li className="hover:text-black transition-all ease-linear">
                     <a href="#about">About</a>
