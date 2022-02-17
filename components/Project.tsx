@@ -45,6 +45,14 @@ const Project = ({ name, img, website, github, description }: ProjectProps) => {
         <div className="max-w-sm">
             <h3 className="mb-2 text-xl sm:text-2xl text-center">{name}</h3>
             <div className="relative h-[300px] w-[300px] mx-auto">
+                {/* Backside */}
+                <div
+                    className={`flex flex-col gap-4 items-center justify-center absolute top-0 left-0 bottom-0 right-0 bg-yellow-300 opacity-0 ${animationsBack()}`}
+                    onClick={handleClickBack}
+                >
+                    {website && <ProjectLink name="website" link={website} />}
+                    {github && <ProjectLink name="github" link={github} />}
+                </div>
                 {/* Frontside */}
                 <div
                     className={`grid justify-center rounded-lg hover:shadow-xl ${animationsFront()}`}
@@ -57,15 +65,8 @@ const Project = ({ name, img, website, github, description }: ProjectProps) => {
                         className="rounded-lg"
                     />
                 </div>
-                {/* Backside */}
-                <div
-                    className={`flex flex-col gap-4 items-center justify-center absolute top-0 left-0 bottom-0 right-0 opacity-1 bg-yellow-300 opacity-0 ${animationsBack()}`}
-                    onClick={handleClickBack}
-                >
-                    {website && <ProjectLink name="website" link={website} />}
-                    {github && <ProjectLink name="github" link={github} />}
-                </div>
             </div>
+
             <p className="mt-4 mb-6 text-[16px] text-center sm:text-xl">
                 {description}
             </p>
