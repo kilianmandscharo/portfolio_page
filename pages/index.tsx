@@ -68,13 +68,13 @@ const Home = () => {
                     <About />
                     <Projects ref={projectsRef} />
                 </div>
+                <AnimatedLines
+                    width={width}
+                    height={height}
+                    scrollY={scrollY}
+                    projectsYPosition={projectsYPosition}
+                />
             </div>
-            <AnimatedLines
-                width={width}
-                height={height}
-                scrollY={scrollY}
-                projectsYPosition={projectsYPosition}
-            />
         </>
     );
 };
