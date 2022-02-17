@@ -2,7 +2,6 @@ import Head from "next/head";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import About from "../components/About";
 import AnimatedLines from "../components/AnimatedLines";
-import Contact from "../components/Contact";
 import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
 import useScroll from "../hooks/useScroll";
