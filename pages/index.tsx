@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import About from "../components/About";
 import AnimatedLines from "../components/AnimatedLines";
+import Contact from "../components/Contact";
 import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
 import useScroll from "../hooks/useScroll";
@@ -39,13 +40,6 @@ const Home = () => {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
-
-    const makeCircle = () => {
-        return `a 5,5 0 0,0 0,20 a 5,5 0 0,0 0,-20 a 5,5 0 0,0 0,20`;
-    };
-
-    const extraOffset =
-        scrollY > 117 ? (scrollY > projectsYPosition - 30 ? 60 : 30) : 0;
 
     return (
         <>
