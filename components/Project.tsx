@@ -43,15 +43,21 @@ const Project = ({ name, img, website, github, description }: ProjectProps) => {
 
     return (
         <div className="max-w-sm">
-            <h3 className="mb-2 text-xl sm:text-2xl text-center">{name}</h3>
             <div className="relative h-[300px] w-[300px] mx-auto">
                 {/* Backside */}
                 <div
-                    className={`flex flex-col gap-4 items-center justify-center absolute top-0 left-0 bottom-0 right-0 bg-yellow-300 opacity-0 ${animationsBack()}`}
+                    className={`flex flex-col justify-center absolute top-0 left-0 bottom-0 right-0 bg-yellow-300 hover:shadow-xl rounded-lg opacity-0 ${animationsBack()}`}
                     onClick={handleClickBack}
                 >
-                    {website && <ProjectLink name="website" link={website} />}
-                    {github && <ProjectLink name="github" link={github} />}
+                    <h3 className="text-xl sm:text-2xl text-center mb-12">
+                        {name}
+                    </h3>
+                    <div className="flex flex-col gap-4 items-center justify-center">
+                        {website && (
+                            <ProjectLink name="website" link={website} />
+                        )}
+                        {github && <ProjectLink name="github" link={github} />}
+                    </div>
                 </div>
                 {/* Frontside */}
                 <div
