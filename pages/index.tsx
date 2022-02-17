@@ -43,6 +43,9 @@ const Home = () => {
         return `a 5,5 0 0,0 0,20 a 5,5 0 0,0 0,-20 a 5,5 0 0,0 0,20`;
     };
 
+    const extraOffset =
+        scrollY > 117 ? (scrollY > projectsYPosition - 30 ? 60 : 30) : 0;
+
     return (
         <>
             <Head>
@@ -73,23 +76,27 @@ const Home = () => {
                     <path
                         d={`M ${
                             width / 22.352
-                        } 34 ${makeCircle()} v 140 ${makeCircle()} V ${projectsYPosition} ${makeCircle()}`}
+                        } 34 ${makeCircle()} v 140 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} v 300`}
                         stroke="limegreen"
                         strokeWidth="2"
                         fill="transparent"
                         strokeDasharray={height}
-                        strokeDashoffset={height - 179 - scrollY}
+                        strokeDashoffset={height - 179 - scrollY - extraOffset}
                     />
                     <path
                         d={`M ${width / 1.12} 80 h -${
                             width / 1.275
-                        } a 20,20 0 0,0 -20,20 v 94 ${makeCircle()} V ${projectsYPosition} ${makeCircle()}`}
+                        } a 20,20 0 0,0 -20,20 v 94 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} v 300`}
                         stroke="#FC79FF"
                         strokeWidth="2"
                         fill="transparent"
                         strokeDasharray={height}
                         strokeDashoffset={
-                            height - scrollY - 70.4159 - width / 1.275
+                            height -
+                            scrollY -
+                            70.4159 -
+                            width / 1.275 -
+                            extraOffset
                         }
                     />
                     <path
@@ -97,13 +104,17 @@ const Home = () => {
                             width / 1.05
                         } 100 v 30 a 20,20 0 0,1 -20,20 h -${
                             width / 1.285
-                        } a 20,20 0 0,0 -20,20 v 24 ${makeCircle()} V ${projectsYPosition} ${makeCircle()}`}
+                        } a 20,20 0 0,0 -20,20 v 24 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} v 300`}
                         stroke="#8FF8FF"
                         strokeWidth="2"
                         fill="transparent"
                         strokeDasharray={height}
                         strokeDashoffset={
-                            height - scrollY - 61.4159 - width / 1.285
+                            height -
+                            scrollY -
+                            61.4159 -
+                            width / 1.285 -
+                            extraOffset
                         }
                     />
                 </svg>
