@@ -52,7 +52,7 @@ const Home = () => {
             </Head>
             <div
                 ref={containerRef}
-                className="grid justify-center max-w-4xl min-w-[350px] relative mx-auto p-5 pt-8"
+                className="grid justify-center max-w-4xl min-w-[350px] relative mx-auto p-5 pt-8 bg-white"
             >
                 <header className="mb-8 z-10">
                     <Navbar />

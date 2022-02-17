@@ -16,6 +16,9 @@ const AnimatedLines = ({
     const makeCircle = () => {
         return `a 5,5 0 0,0 0,20 a 5,5 0 0,0 0,-20 a 5,5 0 0,0 0,20`;
     };
+    const blueOffset = width / 1.05 - 31.4159 - 45;
+    const purpleOffset = width / 1.12 - 41;
+
     return (
         <svg
             width={width}
@@ -24,9 +27,7 @@ const AnimatedLines = ({
             className="absolute top-0 left-0"
         >
             <path
-                d={`M ${
-                    width / 22.352
-                } 34 ${makeCircle()} v 140 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} v 300`}
+                d={`M 17 34 ${makeCircle()} v 140 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} v 300`}
                 stroke="limegreen"
                 strokeWidth="2"
                 fill="transparent"
@@ -34,27 +35,27 @@ const AnimatedLines = ({
                 strokeDashoffset={height - 179 - scrollY - extraOffset}
             />
             <path
-                d={`M ${width / 1.12} 80 h -${
-                    width / 1.275
-                } a 20,20 0 0,0 -20,20 v 94 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} v 300`}
+                d={`M ${
+                    width / 1.12
+                } 80 H 41 a 20,20 0 0,0 -20,20 v 94 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} v 300`}
                 stroke="#FC79FF"
                 strokeWidth="2"
                 fill="transparent"
                 strokeDasharray={height}
                 strokeDashoffset={
-                    height - scrollY - 70.4159 - width / 1.275 - extraOffset
+                    height - scrollY - 70 - purpleOffset - extraOffset
                 }
             />
             <path
-                d={`M ${width / 1.05} 100 v 30 a 20,20 0 0,1 -20,20 h -${
-                    width / 1.285
-                } a 20,20 0 0,0 -20,20 v 24 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} v 300`}
+                d={`M ${
+                    width / 1.05
+                } 100 v 30 a 20,20 0 0,1 -20,20 H 45 a 20,20 0 0,0 -20,20 v 24 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} v 300`}
                 stroke="#8FF8FF"
                 strokeWidth="2"
                 fill="transparent"
                 strokeDasharray={height}
                 strokeDashoffset={
-                    height - scrollY - 61.4159 - width / 1.285 - extraOffset
+                    height - scrollY - 73 - blueOffset - extraOffset
                 }
             />
         </svg>
