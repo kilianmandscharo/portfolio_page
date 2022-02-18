@@ -8,6 +8,8 @@ import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import useScroll from "../hooks/useScroll";
 
+const ITEM_OFFSET = 62;
+
 const Home = () => {
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
@@ -27,13 +29,13 @@ const Home = () => {
         setHeight(container.offsetHeight);
 
         const projects: any = projectsRef.current;
-        setProjectsYPosition(projects.offsetTop - 45);
+        setProjectsYPosition(projects.offsetTop - ITEM_OFFSET);
 
         const skills: any = skillsRef.current;
-        setSkillsYPosition(skills.offsetTop - 45);
+        setSkillsYPosition(skills.offsetTop - ITEM_OFFSET);
 
         const contact: any = contactRef.current;
-        setContactYPosition(contact.offsetTop - 45);
+        setContactYPosition(contact.offsetTop - ITEM_OFFSET);
 
         const handleResize = () => {
             const cRef: any = containerRef.current;
@@ -45,13 +47,13 @@ const Home = () => {
                 setHeight(cRef.offsetHeight);
             }
             if (pRef) {
-                setProjectsYPosition(pRef.offsetTop - 45);
+                setProjectsYPosition(pRef.offsetTop - ITEM_OFFSET);
             }
             if (sRef) {
-                setSkillsYPosition(sRef.offsetTop - 45);
+                setSkillsYPosition(sRef.offsetTop - ITEM_OFFSET);
             }
             if (coRef) {
-                setContactYPosition(coRef.offsetTop - 45);
+                setContactYPosition(coRef.offsetTop - ITEM_OFFSET);
             }
         };
         window.addEventListener("resize", handleResize);
