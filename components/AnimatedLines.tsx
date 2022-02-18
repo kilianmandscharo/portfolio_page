@@ -5,6 +5,7 @@ interface AnimatedLinesProps {
     width: number;
     height: number;
     scrollY: number;
+    aboutYPosition: number;
     projectsYPosition: number;
     skillsYPosition: number;
     contactYPosition: number;
@@ -14,6 +15,7 @@ const AnimatedLines = ({
     width,
     height,
     scrollY,
+    aboutYPosition,
     projectsYPosition,
     skillsYPosition,
     contactYPosition,
@@ -84,7 +86,7 @@ const AnimatedLines = ({
             className="absolute top-0 left-0"
         >
             <animated.path
-                d={`M 17 34 ${makeCircle()} v 170 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${
+                d={`M 17 34 ${makeCircle()} V${aboutYPosition} ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${
                     height - 90
                 } ${makeCircle()}`}
                 stroke="#A15DF6"
@@ -100,7 +102,7 @@ const AnimatedLines = ({
             <animated.path
                 d={`M ${
                     width / 1.12
-                } 80 a 5,5 0 0,0 -20,0 a 5,5 0 0,0 20,0 a 5,5 0 0,0 -20,0 H 41 a 20,20 0 0,0 -20,20 v 124 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${
+                } 80 a 5,5 0 0,0 -20,0 a 5,5 0 0,0 20,0 a 5,5 0 0,0 -20,0 H 41 a 20,20 0 0,0 -20,20 V ${aboutYPosition} ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${
                     height - 90
                 } ${makeCircle()} `}
                 stroke="#6573EB"
@@ -120,7 +122,7 @@ const AnimatedLines = ({
             <animated.path
                 d={`M ${
                     width / 1.05
-                } 80 ${makeCircle()} v 30 a 20,20 0 0,1 -20,20 H 45 a 20,20 0 0,0 -20,20 v 54 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${
+                } 80 ${makeCircle()} v 30 a 20,20 0 0,1 -20,20 H 45 a 20,20 0 0,0 -20,20 V ${aboutYPosition} ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${
                     height - 90
                 } ${makeCircle()}`}
                 stroke="#5DBDF6"

@@ -8,7 +8,7 @@ const Section = ({ children, name, highlighted }: SectionProps) => {
     return (
         <section
             id={name.toLowerCase()}
-            className={`p-4 mb-12 pb-10 rounded-md ${
+            className={`p-4 mb-12 pb-10 pt-8 rounded-md ${
                 highlighted ? "bg-violet-900/70" : "bg-violet-900/30"
             }`}
         >

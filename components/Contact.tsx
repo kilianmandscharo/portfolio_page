@@ -15,7 +15,7 @@ const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
                 <a
                     href="https://github.com/kilianmandscharo"
                     target="blank"
-                    className="flex items-center bg-white/90 hover:bg-white/70 p-1 rounded-md"
+                    className="flex items-center hover:opacity-70"
                 >
                     <Image
                         src="/github_logo.png"
@@ -26,7 +26,7 @@ const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
                 </a>
                 <a
                     href="mailto:domi.heller@gmx.de"
-                    className="bg-white/90 hover:bg-white/70 p-1 rounded-md"
+                    className="opacity-50 hover:opacity-40"
                 >
                     <svg
                         width={LOGOSIZE}

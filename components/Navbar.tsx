@@ -3,7 +3,7 @@ import Contact from "./Contact";
 const Navbar = () => {
     return (
         <nav className="mb-8 flex justify-center">
-            <ul className="flex flex-row justify-around gap-6">
+            <ul className="flex flex-row justify-around gap-4">
                 {["About", "Projects", "Technologies", "Contact"].map(
                     (name) => (
                         <li

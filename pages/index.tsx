@@ -8,17 +8,19 @@ import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import useScroll from "../hooks/useScroll";
 
-const ITEM_OFFSET = 62;
+const ITEM_OFFSET = 60;
 
 const Home = () => {
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
+    const [aboutYPosition, setAboutYPosition] = useState(0);
     const [projectsYPosition, setProjectsYPosition] = useState(0);
     const [skillsYPosition, setSkillsYPosition] = useState(0);
     const [contactYPosition, setContactYPosition] = useState(0);
     const scrollY = useScroll();
 
     const containerRef = useRef(null);
+    const aboutRef = useRef(null);
     const projectsRef = useRef(null);
     const skillsRef = useRef(null);
     const contactRef = useRef(null);
@@ -27,6 +29,9 @@ const Home = () => {
         const container: any = containerRef.current;
         setWidth(container.offsetWidth);
         setHeight(container.offsetHeight);
+
+        const about: any = aboutRef.current;
+        setAboutYPosition(about.offsetTop - ITEM_OFFSET);
 
         const projects: any = projectsRef.current;
         setProjectsYPosition(projects.offsetTop - ITEM_OFFSET);
@@ -39,12 +44,16 @@ const Home = () => {
 
         const handleResize = () => {
             const cRef: any = containerRef.current;
+            const aRef: any = aboutRef.current;
             const pRef: any = projectsRef.current;
             const sRef: any = skillsRef.current;
             const coRef: any = contactRef.current;
             if (cRef) {
                 setWidth(cRef.offsetWidth);
                 setHeight(cRef.offsetHeight);
+            }
+            if (aRef) {
+                setAboutYPosition(aRef.offsetTop - ITEM_OFFSET);
             }
             if (pRef) {
                 setProjectsYPosition(pRef.offsetTop - ITEM_OFFSET);
@@ -75,9 +84,9 @@ const Home = () => {
                 ref={containerRef}
                 className="grid justify-center max-w-5xl min-w-[350px] relative mx-auto p-5 pt-8 pl-12 bg-neutral-900 text-white/90 font-normal"
             >
-                <header className="mb-12 z-10">
+                <header className="mb-9 z-10">
                     <Navbar />
-                    <h1 className="text-6xl text-center font-header">
+                    <h1 className="text-4xl pt-2 text-center font-header sm:text-6xl sm:pt-0">
                         Hi, I'm Dominik
                     </h1>
                 </header>
@@ -86,6 +95,7 @@ const Home = () => {
                         highlighted={
                             scrollY >= 0 && scrollY < projectsYPosition - 430
                         }
+                        ref={aboutRef}
                     />
                     <Projects
                         highlighted={
@@ -110,6 +120,7 @@ const Home = () => {
                     width={width}
                     height={height}
                     scrollY={scrollY}
+                    aboutYPosition={aboutYPosition}
                     projectsYPosition={projectsYPosition}
                     skillsYPosition={skillsYPosition}
                     contactYPosition={contactYPosition}
