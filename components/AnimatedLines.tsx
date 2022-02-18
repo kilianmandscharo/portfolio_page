@@ -7,6 +7,7 @@ interface AnimatedLinesProps {
     scrollY: number;
     projectsYPosition: number;
     skillsYPosition: number;
+    contactYPosition: number;
 }
 
 const AnimatedLines = ({
@@ -15,6 +16,7 @@ const AnimatedLines = ({
     scrollY,
     projectsYPosition,
     skillsYPosition,
+    contactYPosition,
 }: AnimatedLinesProps) => {
     const [pathsAnimated, setPathsAnimated] = useState(false);
 
@@ -26,9 +28,9 @@ const AnimatedLines = ({
     const secondOffset = width / 1.12 - 41;
     const thirdOffset = width / 1.05 - 31.4159 - 45;
 
-    const line1Length = height - 34 + 4 * 37.1 + 135;
-    const line2Length = height - 80 + 3 * 37.1 + secondOffset + 31.4 + 90;
-    const line3Length = height - 100 + 3 * 37.1 + thirdOffset + 31.4 * 2 + 90;
+    const line1Length = height - 34 + 5 * 37.1 + 170;
+    const line2Length = height - 80 + 4 * 37.1 + secondOffset + 31.4 + 135;
+    const line3Length = height - 100 + 4 * 37.1 + thirdOffset + 31.4 * 2 + 135;
 
     const delay = 0;
     const animationDuration = 1500;
@@ -70,7 +72,7 @@ const AnimatedLines = ({
             className="absolute top-0 left-0"
         >
             <animated.path
-                d={`M 17 34 ${makeCircle()} v 140 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${height}`}
+                d={`M 17 34 ${makeCircle()} v 140 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${height}`}
                 stroke="#A15DF6"
                 strokeWidth="2"
                 fill="transparent"
@@ -84,7 +86,7 @@ const AnimatedLines = ({
             <animated.path
                 d={`M ${
                     width / 1.12
-                } 80 H 41 a 20,20 0 0,0 -20,20 v 94 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${height}`}
+                } 80 H 41 a 20,20 0 0,0 -20,20 v 94 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${height} `}
                 stroke="#6573EB"
                 strokeWidth="2"
                 fill="transparent"
@@ -102,7 +104,7 @@ const AnimatedLines = ({
             <animated.path
                 d={`M ${
                     width / 1.05
-                } 100 v 30 a 20,20 0 0,1 -20,20 H 45 a 20,20 0 0,0 -20,20 v 24 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${height}`}
+                } 100 v 30 a 20,20 0 0,1 -20,20 H 45 a 20,20 0 0,0 -20,20 v 24 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${height}`}
                 stroke="#5DBDF6"
                 strokeWidth="2"
                 fill="transparent"

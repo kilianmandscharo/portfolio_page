@@ -1,17 +1,20 @@
 import Image from "next/image";
-import { useState } from "react";
+import React from "react";
 import Section from "./Section";
 
 const LOGOSIZE = 70;
 
-const Contact = () => {
+const Contact = React.forwardRef<HTMLDivElement>((props, ref) => {
     return (
         <Section name="Contact">
-            <div className="flex justify-around items-center gap-6">
+            <div
+                ref={ref}
+                className="min-w-[350px] flex justify-around items-center"
+            >
                 <a
                     href="https://github.com/kilianmandscharo"
                     target="blank"
-                    className="flex items-center bg-white/90 p-1 rounded-md"
+                    className="flex items-center bg-white/90 hover:bg-white/70 p-1 rounded-md"
                 >
                     <Image
                         src="/github_logo.png"
@@ -22,7 +25,7 @@ const Contact = () => {
                 </a>
                 <a
                     href="mailto:domi.heller@gmx.de"
-                    className="bg-white/90 p-1 rounded-md"
+                    className="bg-white/90 hover:bg-white/70 p-1 rounded-md"
                 >
                     <svg
                         width={LOGOSIZE}
@@ -40,6 +43,6 @@ const Contact = () => {
             </div>
         </Section>
     );
-};
+});
 
 export default Contact;

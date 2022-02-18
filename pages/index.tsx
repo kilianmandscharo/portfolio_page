@@ -13,11 +13,13 @@ const Home = () => {
     const [height, setHeight] = useState(0);
     const [projectsYPosition, setProjectsYPosition] = useState(0);
     const [skillsYPosition, setSkillsYPosition] = useState(0);
+    const [contactYPosition, setContactYPosition] = useState(0);
     const scrollY = useScroll();
 
     const containerRef = useRef(null);
     const projectsRef = useRef(null);
     const skillsRef = useRef(null);
+    const contactRef = useRef(null);
 
     useLayoutEffect(() => {
         const container: any = containerRef.current;
@@ -30,19 +32,26 @@ const Home = () => {
         const skills: any = skillsRef.current;
         setSkillsYPosition(skills.offsetTop - 45);
 
+        const contact: any = contactRef.current;
+        setContactYPosition(contact.offsetTop - 45);
+
         const handleResize = () => {
-            const cr: any = containerRef.current;
-            const pr: any = projectsRef.current;
-            const sr: any = skillsRef.current;
-            if (cr) {
-                setWidth(cr.offsetWidth);
-                setHeight(cr.offsetHeight);
+            const cRef: any = containerRef.current;
+            const pRef: any = projectsRef.current;
+            const sRef: any = skillsRef.current;
+            const coRef: any = contactRef.current;
+            if (cRef) {
+                setWidth(cRef.offsetWidth);
+                setHeight(cRef.offsetHeight);
             }
-            if (pr) {
-                setProjectsYPosition(pr.offsetTop - 45);
+            if (pRef) {
+                setProjectsYPosition(pRef.offsetTop - 45);
             }
-            if (sr) {
-                setSkillsYPosition(sr.offsetTop - 45);
+            if (sRef) {
+                setSkillsYPosition(sRef.offsetTop - 45);
+            }
+            if (coRef) {
+                setContactYPosition(coRef.offsetTop - 45);
             }
         };
         window.addEventListener("resize", handleResize);
@@ -72,7 +81,7 @@ const Home = () => {
                     <About />
                     <Projects ref={projectsRef} />
                     <Skills ref={skillsRef} />
-                    <Contact />
+                    <Contact ref={contactRef} />
                 </div>
                 <AnimatedLines
                     width={width}
@@ -80,6 +89,7 @@ const Home = () => {
                     scrollY={scrollY}
                     projectsYPosition={projectsYPosition}
                     skillsYPosition={skillsYPosition}
+                    contactYPosition={contactYPosition}
                 />
             </div>
         </>
