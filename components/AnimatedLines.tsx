@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 
 interface AnimatedLinesProps {
@@ -19,12 +19,24 @@ const AnimatedLines = ({
     contactYPosition,
 }: AnimatedLinesProps) => {
     const [pathsAnimated, setPathsAnimated] = useState(false);
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShow(true);
+        }, 300);
+    }, []);
 
     const makeCircle = () => {
         return `a 5,5 0 0,0 0,20 a 5,5 0 0,0 0,-20 a 5,5 0 0,0 0,20`;
     };
 
-    const extraOffset = 270;
+    const extraOffset =
+        scrollY > projectsYPosition - 430
+            ? scrollY > skillsYPosition - 390
+                ? 492
+                : 461
+            : 430;
     const secondOffset = width / 1.12 - 41;
     const thirdOffset = width / 1.05 - 31.4159 - 45;
 
@@ -64,7 +76,7 @@ const AnimatedLines = ({
         onRest: () => setPathsAnimated(true),
     });
 
-    return (
+    return show ? (
         <svg
             width={width}
             height={height}
@@ -116,6 +128,8 @@ const AnimatedLines = ({
                 }
             />
         </svg>
+    ) : (
+        <div></div>
     );
 };
 
