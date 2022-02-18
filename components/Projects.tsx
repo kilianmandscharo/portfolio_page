@@ -9,7 +9,7 @@ const Projects = React.forwardRef<HTMLDivElement, SegmentProps>(
             <Section highlighted={props.highlighted} name="Projects">
                 <div
                     ref={ref}
-                    className="grid justify-center sm:grid-cols-2 sm:gap-12"
+                    className="grid justify-center sm:grid-cols-2 sm:gap-20"
                 >
                     <Project
                         name="Visualizing Algorithms"

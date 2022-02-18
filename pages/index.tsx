@@ -27,20 +27,30 @@ const Home = () => {
 
     useLayoutEffect(() => {
         const container: any = containerRef.current;
-        setWidth(container.offsetWidth);
-        setHeight(container.offsetHeight);
+        if (container) {
+            setWidth(container.offsetWidth);
+            setHeight(container.offsetHeight);
+        }
 
         const about: any = aboutRef.current;
-        setAboutYPosition(about.offsetTop - ITEM_OFFSET);
+        if (about) {
+            setAboutYPosition(about.offsetTop - ITEM_OFFSET);
+        }
 
         const projects: any = projectsRef.current;
-        setProjectsYPosition(projects.offsetTop - ITEM_OFFSET);
+        if (projects) {
+            setProjectsYPosition(projects.offsetTop - ITEM_OFFSET);
+        }
 
         const skills: any = skillsRef.current;
-        setSkillsYPosition(skills.offsetTop - ITEM_OFFSET);
+        if (skills) {
+            setSkillsYPosition(skills.offsetTop - ITEM_OFFSET);
+        }
 
         const contact: any = contactRef.current;
-        setContactYPosition(contact.offsetTop - ITEM_OFFSET);
+        if (contact) {
+            setContactYPosition(contact.offsetTop - ITEM_OFFSET);
+        }
 
         const handleResize = () => {
             const cRef: any = containerRef.current;

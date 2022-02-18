@@ -1,10 +1,10 @@
-const maxWidth = "6rem";
+const maxWidth = "max-w-[8rem]";
 
 export const JSIcon = () => {
     return (
         <svg
             id="Devicon"
-            className={`max-w-[${maxWidth}]`}
+            className={maxWidth}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 128 128"
         >
@@ -21,7 +21,7 @@ export const TSIcon = () => {
     return (
         <svg
             id="Devicon"
-            className={`max-w-[${maxWidth}]`}
+            className={maxWidth}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 128 128"
         >
@@ -39,7 +39,7 @@ export const ReactIcon = () => {
     return (
         <svg
             id="Devicon"
-            className={`max-w-[${maxWidth}]`}
+            className={maxWidth}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 128 128"
         >
@@ -55,7 +55,7 @@ export const PythonIcon = () => {
     return (
         <svg
             id="Devicon"
-            className={`max-w-[${maxWidth}]`}
+            className={maxWidth}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 128 128"
         >
@@ -117,7 +117,7 @@ export const CIcon = () => {
     return (
         <svg
             id="Devicon"
-            className={`max-w-[${maxWidth}]`}
+            className={maxWidth}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 128 128"
         >
@@ -141,7 +141,7 @@ export const HTMLIcon = () => {
     return (
         <svg
             id="Devicon"
-            className={`max-w-[${maxWidth}]`}
+            className={maxWidth}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 128 128"
         >
@@ -166,7 +166,7 @@ export const CSSIcon = () => {
     return (
         <svg
             id="Devicon"
-            className={`max-w-[${maxWidth}]`}
+            className={maxWidth}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 128 128"
         >
@@ -202,7 +202,7 @@ export const NextIcon = () => {
     return (
         <svg
             id="Devicon"
-            className={`max-w-[${maxWidth}`}
+            className={maxWidth}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 128 128"
         >
@@ -215,7 +215,7 @@ export const GitIcon = () => {
     return (
         <svg
             id="Devicon"
-            className={`max-w-[${maxWidth}]`}
+            className={maxWidth}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 128 128"
         >
@@ -231,7 +231,7 @@ export const TailwindIcon = () => {
     return (
         <svg
             id="Devicon"
-            className={`max-w-[${maxWidth}]`}
+            className={maxWidth}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 128 128"
         >

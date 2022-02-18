@@ -16,12 +16,11 @@ p {
     margin-bottom: 1rem;
 }
 
-#logo-grid {
-    min-width: 350px;
-    max-width: 80%;
+#icon-grid {
+    min-width: 200px;
     display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
 }
 
 *,

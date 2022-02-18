@@ -10,7 +10,7 @@ const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
         <Section highlighted={props.highlighted} name="Contact">
             <div
                 ref={ref}
-                className="min-w-[350px] min-h-[160px] flex justify-around items-center"
+                className="min-w-[300px] min-h-[160px] flex justify-around items-center"
             >
                 <a
                     href="https://github.com/kilianmandscharo"
@@ -26,7 +26,7 @@ const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
                 </a>
                 <a
                     href="mailto:domi.heller@gmx.de"
-                    className="opacity-50 hover:opacity-40"
+                    className="opacity-40 hover:opacity-30"
                 >
                     <svg
                         width={LOGOSIZE}
