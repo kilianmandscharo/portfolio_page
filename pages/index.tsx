@@ -73,11 +73,13 @@ const Home = () => {
             </Head>
             <div
                 ref={containerRef}
-                className="grid justify-center max-w-5xl min-w-[350px] relative mx-auto p-5 pt-8 pl-12 bg-neutral-900 text-white/90"
+                className="grid justify-center max-w-5xl min-w-[350px] relative mx-auto p-5 pt-8 pl-12 bg-neutral-900 text-white/90 font-normal"
             >
-                <header className="mb-16 z-10">
+                <header className="mb-12 z-10">
                     <Navbar />
-                    <h1 className="text-5xl text-center">Hi, I'm Dominik</h1>
+                    <h1 className="text-6xl text-center font-header">
+                        Hi, I'm Dominik
+                    </h1>
                 </header>
                 <div className="z-10">
                     <About

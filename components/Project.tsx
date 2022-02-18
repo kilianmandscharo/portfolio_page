@@ -6,11 +6,19 @@ interface ProjectProps {
     name: string;
     img: string;
     description: string;
+    highlighted: boolean;
     website?: string;
     github?: string;
 }
 
-const Project = ({ name, img, website, github, description }: ProjectProps) => {
+const Project = ({
+    name,
+    img,
+    highlighted,
+    website,
+    github,
+    description,
+}: ProjectProps) => {
     const [flip, setFlip] = useState(false);
     const [flipBack, setFlipBack] = useState(false);
 
@@ -42,11 +50,15 @@ const Project = ({ name, img, website, github, description }: ProjectProps) => {
     };
 
     return (
-        <div className="max-w-sm bg-neutral-800 p-4 mb-4 sm:mb-0 rounded-lg">
+        <div
+            className={`max-w-sm ${
+                highlighted ? "bg-violet-900/90" : "bg-violet-900/50"
+            } p-4 mb-4 sm:mb-0 rounded-lg shadow-lg`}
+        >
             <div className="relative  mx-auto mb-8 max-w-[300px] max-h-[300px]">
                 {/* Backside */}
                 <div
-                    className={`flex flex-col justify-center absolute top-0 left-0 bottom-0 right-0 bg-indigo-800 border-2 border-indigo-800 hover:border-white/90 transition-all ease-in rounded-md opacity-0 ${animationsBack()}`}
+                    className={`flex flex-col justify-center absolute top-0 left-0 bottom-0 right-0 bg-indigo-900 border-2 border-indigo-900 hover:border-white/90 transition-all ease-in rounded-md opacity-0 ${animationsBack()}`}
                     onClick={handleClickBack}
                 >
                     <h3 className="text-xl sm:text-2xl text-center mb-12">
@@ -61,7 +73,7 @@ const Project = ({ name, img, website, github, description }: ProjectProps) => {
                 </div>
                 {/* Frontside */}
                 <div
-                    className={`grid justify-center rounded-lg border-4 border-neutral-800 hover:border-indigo-500 transition-all ease-in ${animationsFront()}`}
+                    className={`grid justify-center rounded-lg border-4 border-transparent hover:border-indigo-500 transition-all ease-in ${animationsFront()}`}
                     onClick={handleClickFront}
                 >
                     <Image
