@@ -46,7 +46,7 @@ const Project = ({ name, img, website, github, description }: ProjectProps) => {
             <div className="relative  mx-auto mb-8 max-w-[300px] max-h-[300px]">
                 {/* Backside */}
                 <div
-                    className={`flex flex-col justify-center absolute top-0 left-0 bottom-0 right-0 bg-indigo-800 border-2 border-indigo-800 hover:border-white/90 rounded-lg opacity-0 ${animationsBack()}`}
+                    className={`flex flex-col justify-center absolute top-0 left-0 bottom-0 right-0 bg-indigo-800 border-2 border-indigo-800 hover:border-white/90 transition-all ease-in rounded-md opacity-0 ${animationsBack()}`}
                     onClick={handleClickBack}
                 >
                     <h3 className="text-xl sm:text-2xl text-center mb-12">
@@ -61,14 +61,14 @@ const Project = ({ name, img, website, github, description }: ProjectProps) => {
                 </div>
                 {/* Frontside */}
                 <div
-                    className={`grid justify-center rounded-lg border-4 border-neutral-800 hover:border-indigo-500 ${animationsFront()}`}
+                    className={`grid justify-center rounded-lg border-4 border-neutral-800 hover:border-indigo-500 transition-all ease-in ${animationsFront()}`}
                     onClick={handleClickFront}
                 >
                     <Image
                         src={img}
                         width="300"
                         height="300"
-                        className="rounded-lg"
+                        className="rounded-md"
                         alt={`${name} project image`}
                     />
                 </div>
