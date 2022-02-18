@@ -8,7 +8,7 @@ const ProjectLink = ({ name, link }: ProjectLinkProps) => {
         <a
             href={link}
             target="blank"
-            className="hover:border-b border-black"
+            className="border border-white hover:opacity-70 p-2 rounded-lg"
             onClick={(e) => {
                 e.stopPropagation();
             }}
