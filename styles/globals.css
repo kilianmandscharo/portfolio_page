@@ -13,6 +13,14 @@ p {
     margin-bottom: 1rem;
 }
 
+#logo-grid {
+    min-width: 350px;
+    max-width: 80%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
 *,
 *:before,
 *:after {

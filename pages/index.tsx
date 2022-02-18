@@ -4,6 +4,7 @@ import About from "../components/About";
 import AnimatedLines from "../components/AnimatedLines";
 import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
+import Skills from "../components/Skills";
 import useScroll from "../hooks/useScroll";
 
 const Home = () => {
@@ -60,6 +61,7 @@ const Home = () => {
                 <div className="z-10">
                     <About />
                     <Projects ref={projectsRef} />
+                    <Skills />
                 </div>
                 <AnimatedLines
                     width={width}
