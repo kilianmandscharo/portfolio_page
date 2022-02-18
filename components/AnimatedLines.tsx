@@ -41,8 +41,8 @@ const AnimatedLines = ({
     const thirdOffset = width / 1.05 - 31.4159 - 45;
 
     const line1Length = height - 34 + 5 * 37.1 + 170;
-    const line2Length = height - 80 + 4 * 37.1 + secondOffset + 31.4 + 135;
-    const line3Length = height - 100 + 4 * 37.1 + thirdOffset + 31.4 * 2 + 135;
+    const line2Length = height - 80 + 5 * 37.1 + secondOffset + 31.4 + 135;
+    const line3Length = height - 100 + 5 * 37.1 + thirdOffset + 31.4 * 2 + 135;
 
     const delay = 0;
     const animationDuration = 1500;
@@ -59,7 +59,7 @@ const AnimatedLines = ({
     const { secondAnimatedValue } = useSpring({
         reset: true,
         from: { secondAnimatedValue: line2Length },
-        to: { secondAnimatedValue: line2Length - secondOffset - 70 - 430 },
+        to: { secondAnimatedValue: line2Length - secondOffset - 144 - 430 },
         delay: delay,
         config: {
             duration: animationDuration,
@@ -68,7 +68,7 @@ const AnimatedLines = ({
     const { thirdAnimatedValue } = useSpring({
         reset: true,
         from: { thirdAnimatedValue: line3Length },
-        to: { thirdAnimatedValue: line3Length - thirdOffset - 73 - 430 },
+        to: { thirdAnimatedValue: line3Length - thirdOffset - 167 - 430 },
         delay: delay,
         config: {
             duration: animationDuration,
@@ -98,7 +98,7 @@ const AnimatedLines = ({
             <animated.path
                 d={`M ${
                     width / 1.12
-                } 80 H 41 a 20,20 0 0,0 -20,20 v 94 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${height} `}
+                } 80 a 5,5 0 0,0 -20,0 a 5,5 0 0,0 20,0 a 5,5 0 0,0 -20,0 H 41 a 20,20 0 0,0 -20,20 v 94 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${height} `}
                 stroke="#6573EB"
                 strokeWidth="2"
                 fill="transparent"
@@ -107,7 +107,7 @@ const AnimatedLines = ({
                     pathsAnimated
                         ? line2Length -
                           scrollY -
-                          70 -
+                          144 -
                           secondOffset -
                           extraOffset
                         : secondAnimatedValue
@@ -116,14 +116,18 @@ const AnimatedLines = ({
             <animated.path
                 d={`M ${
                     width / 1.05
-                } 100 v 30 a 20,20 0 0,1 -20,20 H 45 a 20,20 0 0,0 -20,20 v 24 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${height}`}
+                } 80 ${makeCircle()} v 30 a 20,20 0 0,1 -20,20 H 45 a 20,20 0 0,0 -20,20 v 24 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${height}`}
                 stroke="#5DBDF6"
                 strokeWidth="2"
                 fill="transparent"
                 strokeDasharray={line3Length}
                 strokeDashoffset={
                     pathsAnimated
-                        ? line3Length - scrollY - 73 - thirdOffset - extraOffset
+                        ? line3Length -
+                          scrollY -
+                          167 -
+                          thirdOffset -
+                          extraOffset
                         : thirdAnimatedValue
                 }
             />

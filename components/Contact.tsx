@@ -10,7 +10,7 @@ const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
         <Section highlighted={props.highlighted} name="Contact">
             <div
                 ref={ref}
-                className="min-w-[350px] flex justify-around items-center"
+                className="min-w-[350px] min-h-[160px] flex justify-around items-center"
             >
                 <a
                     href="https://github.com/kilianmandscharo"
