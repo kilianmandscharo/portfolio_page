@@ -16,7 +16,7 @@ import Section from "./Section";
 const Skills = React.forwardRef<HTMLDivElement>((props, ref) => {
     return (
         <Section name="Technologies">
-            <div id="logo-grid" className="mb-12" ref={ref}>
+            <div id="logo-grid" ref={ref}>
                 <HTMLIcon />
                 <CSSIcon />
                 <JSIcon />

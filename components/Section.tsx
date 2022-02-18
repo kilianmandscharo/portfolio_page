@@ -5,7 +5,7 @@ interface SectionProps {
 
 const Section = ({ children, name }: SectionProps) => {
     return (
-        <section id={name.toLowerCase()} className="p-4">
+        <section id={name.toLowerCase()} className="p-4 mb-12">
             <div className="flex justify-around items-center mb-4">
                 <div className="h-[1px] w-3/12 bg-white/90" />
                 <h2 className="text-4xl text-center mx-2">{name}</h2>
