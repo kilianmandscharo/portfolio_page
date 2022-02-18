@@ -1,4 +1,4 @@
-const maxWidth = "8rem";
+const maxWidth = "6rem";
 
 export const JSIcon = () => {
     return (
@@ -202,7 +202,7 @@ export const NextIcon = () => {
     return (
         <svg
             id="Devicon"
-            className={`max-w-[${maxWidth}]`}
+            className={`max-w-[${maxWidth}`}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 128 128"
         >
