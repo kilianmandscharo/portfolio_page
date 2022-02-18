@@ -75,7 +75,7 @@ const Home = () => {
                 ref={containerRef}
                 className="grid justify-center max-w-5xl min-w-[350px] relative mx-auto p-5 pt-8 pl-12 bg-neutral-900 text-white/90"
             >
-                <header className="mb-8 z-10">
+                <header className="mb-16 z-10">
                     <Navbar />
                     <h1 className="text-5xl text-center">Hi, I'm Dominik</h1>
                 </header>

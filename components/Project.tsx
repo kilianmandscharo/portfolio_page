@@ -30,15 +30,15 @@ const Project = ({ name, img, website, github, description }: ProjectProps) => {
     };
 
     const animationsFront = () => {
-        return `${flip ? "animate-flipOut" : ""} ${
-            flipBack ? "animate-flipIn" : ""
-        } ${flip ? "pointer-events-none" : ""}`;
+        return `${
+            flip ? "animate-flipOut pointer-events-none" : "animate-flipIn"
+        } `;
     };
 
     const animationsBack = () => {
-        return `${flip ? "animate-flipIn" : ""} ${
-            flipBack ? "animate-flipOut" : ""
-        } ${!flip ? "pointer-events-none" : ""}`;
+        return `${
+            flip ? "animate-flipIn" : "animate-flipOut pointer-events-none"
+        } `;
     };
 
     return (

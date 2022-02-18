@@ -40,12 +40,12 @@ const AnimatedLines = ({
     const secondOffset = width / 1.12 - 41;
     const thirdOffset = width / 1.05 - 31.4159 - 45;
 
-    const line1Length = height - 34 + 5 * 37.1 + 170;
-    const line2Length = height - 80 + 5 * 37.1 + secondOffset + 31.4 + 135;
-    const line3Length = height - 100 + 5 * 37.1 + thirdOffset + 31.4 * 2 + 135;
+    const line1Length = height - 34 + 5 * 37.1 + 190;
+    const line2Length = height - 80 + 5 * 37.1 + secondOffset + 31.4 + 175;
+    const line3Length = height - 100 + 5 * 37.1 + thirdOffset + 31.4 * 2 + 175;
 
     const delay = 0;
-    const animationDuration = 1500;
+    const animationDuration = 2000;
 
     const { firstAnimatedValue } = useSpring({
         reset: true,
@@ -84,7 +84,9 @@ const AnimatedLines = ({
             className="absolute top-0 left-0"
         >
             <animated.path
-                d={`M 17 34 ${makeCircle()} v 140 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${height}`}
+                d={`M 17 34 ${makeCircle()} v 170 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${
+                    height - 90
+                } ${makeCircle()}`}
                 stroke="#A15DF6"
                 strokeWidth="2"
                 fill="transparent"
@@ -98,7 +100,9 @@ const AnimatedLines = ({
             <animated.path
                 d={`M ${
                     width / 1.12
-                } 80 a 5,5 0 0,0 -20,0 a 5,5 0 0,0 20,0 a 5,5 0 0,0 -20,0 H 41 a 20,20 0 0,0 -20,20 v 94 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${height} `}
+                } 80 a 5,5 0 0,0 -20,0 a 5,5 0 0,0 20,0 a 5,5 0 0,0 -20,0 H 41 a 20,20 0 0,0 -20,20 v 124 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${
+                    height - 90
+                } ${makeCircle()} `}
                 stroke="#6573EB"
                 strokeWidth="2"
                 fill="transparent"
@@ -116,7 +120,9 @@ const AnimatedLines = ({
             <animated.path
                 d={`M ${
                     width / 1.05
-                } 80 ${makeCircle()} v 30 a 20,20 0 0,1 -20,20 H 45 a 20,20 0 0,0 -20,20 v 24 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${height}`}
+                } 80 ${makeCircle()} v 30 a 20,20 0 0,1 -20,20 H 45 a 20,20 0 0,0 -20,20 v 54 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()} V ${
+                    height - 90
+                } ${makeCircle()}`}
                 stroke="#5DBDF6"
                 strokeWidth="2"
                 fill="transparent"
