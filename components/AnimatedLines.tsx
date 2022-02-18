@@ -25,11 +25,13 @@ const AnimatedLines = ({
     const thirdOffset = width / 1.05 - 31.4159 - 45;
     const secondOffset = width / 1.12 - 41;
 
+    const delay = 0;
+
     const { firstAnimatedValue } = useSpring({
         reset: true,
         from: { firstAnimatedValue: height },
         to: { firstAnimatedValue: height - 179 },
-        delay: 200,
+        delay: delay,
         config: {
             duration: 1000,
         },
@@ -38,7 +40,7 @@ const AnimatedLines = ({
         reset: true,
         from: { secondAnimatedValue: height },
         to: { secondAnimatedValue: height - secondOffset - 70 },
-        delay: 200,
+        delay: delay,
         config: {
             duration: 1000,
         },
@@ -47,7 +49,7 @@ const AnimatedLines = ({
         reset: true,
         from: { thirdAnimatedValue: height },
         to: { thirdAnimatedValue: height - thirdOffset - 73 },
-        delay: 200,
+        delay: delay,
         config: {
             duration: 1000,
         },
