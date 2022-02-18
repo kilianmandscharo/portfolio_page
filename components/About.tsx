@@ -4,7 +4,7 @@ import Section from "./Section";
 const About = () => {
     return (
         <Section name="About">
-            <div className="sm:columns-2 gap-x-8">
+            <div className="sm:columns-2 gap-x-8 sm:px-8">
                 <p>
                     My name is Dominik Heller. I like writing software with a
                     main interest in front-end web development.
