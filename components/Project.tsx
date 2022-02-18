@@ -43,7 +43,7 @@ const Project = ({ name, img, website, github, description }: ProjectProps) => {
 
     return (
         <div className="max-w-sm bg-neutral-800 p-4 mb-4 sm:mb-0 rounded-lg">
-            <div className="relative h-[300px] w-[300px] mx-auto mb-8">
+            <div className="relative  mx-auto mb-8 max-w-[300px] max-h-[300px]">
                 {/* Backside */}
                 <div
                     className={`flex flex-col justify-center absolute top-0 left-0 bottom-0 right-0 bg-indigo-800 border-2 border-indigo-800 hover:border-white/90 rounded-lg opacity-0 ${animationsBack()}`}
@@ -61,7 +61,7 @@ const Project = ({ name, img, website, github, description }: ProjectProps) => {
                 </div>
                 {/* Frontside */}
                 <div
-                    className={`grid justify-center rounded-lg border-4 border-neutral-800 hover:border-indigo-800 ${animationsFront()}`}
+                    className={`grid justify-center rounded-lg border-4 border-neutral-800 hover:border-indigo-500 ${animationsFront()}`}
                     onClick={handleClickFront}
                 >
                     <Image
