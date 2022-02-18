@@ -1,3 +1,4 @@
+import React from "react";
 import {
     CIcon,
     CSSIcon,
@@ -12,10 +13,10 @@ import {
 } from "./Logos";
 import Section from "./Section";
 
-const Skills = () => {
+const Skills = React.forwardRef<HTMLDivElement>((props, ref) => {
     return (
-        <Section name="Skills">
-            <div id="logo-grid">
+        <Section name="Technologies">
+            <div id="logo-grid" className="mb-12" ref={ref}>
                 <HTMLIcon />
                 <CSSIcon />
                 <JSIcon />
@@ -29,6 +30,6 @@ const Skills = () => {
             </div>
         </Section>
     );
-};
+});
 
 export default Skills;

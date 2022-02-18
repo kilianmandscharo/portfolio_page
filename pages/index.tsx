@@ -11,10 +11,12 @@ const Home = () => {
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
     const [projectsYPosition, setProjectsYPosition] = useState(0);
+    const [skillsYPosition, setSkillsYPosition] = useState(0);
     const scrollY = useScroll();
 
-    const projectsRef = useRef(null);
     const containerRef = useRef(null);
+    const projectsRef = useRef(null);
+    const skillsRef = useRef(null);
 
     useLayoutEffect(() => {
         const container: any = containerRef.current;
@@ -24,15 +26,22 @@ const Home = () => {
         const projects: any = projectsRef.current;
         setProjectsYPosition(projects.offsetTop - 45);
 
+        const skills: any = skillsRef.current;
+        setSkillsYPosition(skills.offsetTop - 45);
+
         const handleResize = () => {
             const cr: any = containerRef.current;
             const pr: any = projectsRef.current;
+            const sr: any = skillsRef.current;
             if (cr) {
                 setWidth(cr.offsetWidth);
                 setHeight(cr.offsetHeight);
             }
             if (pr) {
                 setProjectsYPosition(pr.offsetTop - 45);
+            }
+            if (sr) {
+                setSkillsYPosition(sr.offsetTop - 45);
             }
         };
         window.addEventListener("resize", handleResize);
@@ -61,13 +70,14 @@ const Home = () => {
                 <div className="z-10">
                     <About />
                     <Projects ref={projectsRef} />
-                    <Skills />
+                    <Skills ref={skillsRef} />
                 </div>
                 <AnimatedLines
                     width={width}
                     height={height}
                     scrollY={scrollY}
                     projectsYPosition={projectsYPosition}
+                    skillsYPosition={skillsYPosition}
                 />
             </div>
         </>
