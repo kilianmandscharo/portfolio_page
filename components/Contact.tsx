@@ -9,7 +9,12 @@ const Contact = () => {
                 target="blank"
                 className="flex items-center"
             >
-                <Image src="/github_logo.png" width="25" height="25" />
+                <Image
+                    src="/github_logo.png"
+                    alt="github logo"
+                    width="25"
+                    height="25"
+                />
             </a>
             <a href="mailto:domi.heller@gmx.de">
                 <svg

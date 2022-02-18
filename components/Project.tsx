@@ -69,6 +69,7 @@ const Project = ({ name, img, website, github, description }: ProjectProps) => {
                         width="300"
                         height="300"
                         className="rounded-lg"
+                        alt={`${name} project image`}
                     />
                 </div>
             </div>
