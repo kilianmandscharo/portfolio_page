@@ -6,6 +6,7 @@ interface AnimatedLinesProps {
     height: number;
     scrollY: number;
     projectsYPosition: number;
+    skillsYPosition: number;
 }
 
 const AnimatedLines = ({
@@ -13,6 +14,7 @@ const AnimatedLines = ({
     height,
     scrollY,
     projectsYPosition,
+    skillsYPosition,
 }: AnimatedLinesProps) => {
     const [pathsAnimated, setPathsAnimated] = useState(false);
 
@@ -20,38 +22,42 @@ const AnimatedLines = ({
         return `a 5,5 0 0,0 0,20 a 5,5 0 0,0 0,-20 a 5,5 0 0,0 0,20`;
     };
 
-    const extraOffset =
-        scrollY > 117 ? (scrollY > projectsYPosition - 30 ? 60 : 30) : 0;
-    const thirdOffset = width / 1.05 - 31.4159 - 45;
+    const extraOffset = 270;
     const secondOffset = width / 1.12 - 41;
+    const thirdOffset = width / 1.05 - 31.4159 - 45;
+
+    const line1Length = height - 34 + 4 * 37.1 + 135;
+    const line2Length = height - 80 + 3 * 37.1 + secondOffset + 31.4 + 90;
+    const line3Length = height - 100 + 3 * 37.1 + thirdOffset + 31.4 * 2 + 90;
 
     const delay = 0;
+    const animationDuration = 1500;
 
     const { firstAnimatedValue } = useSpring({
         reset: true,
-        from: { firstAnimatedValue: height },
-        to: { firstAnimatedValue: height - 179 },
+        from: { firstAnimatedValue: line1Length },
+        to: { firstAnimatedValue: line1Length - 179 - 270 },
         delay: delay,
         config: {
-            duration: 1000,
+            duration: animationDuration,
         },
     });
     const { secondAnimatedValue } = useSpring({
         reset: true,
-        from: { secondAnimatedValue: height },
-        to: { secondAnimatedValue: height - secondOffset - 70 },
+        from: { secondAnimatedValue: line2Length },
+        to: { secondAnimatedValue: line2Length - secondOffset - 70 - 270 },
         delay: delay,
         config: {
-            duration: 1000,
+            duration: animationDuration,
         },
     });
     const { thirdAnimatedValue } = useSpring({
         reset: true,
-        from: { thirdAnimatedValue: height },
-        to: { thirdAnimatedValue: height - thirdOffset - 73 },
+        from: { thirdAnimatedValue: line3Length },
+        to: { thirdAnimatedValue: line3Length - thirdOffset - 73 - 270 },
         delay: delay,
         config: {
-            duration: 1000,
+            duration: animationDuration,
         },
         onRest: () => setPathsAnimated(true),
     });
@@ -64,42 +70,46 @@ const AnimatedLines = ({
             className="absolute top-0 left-0"
         >
             <animated.path
-                d={`M 17 34 ${makeCircle()} v 140 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${height}`}
+                d={`M 17 34 ${makeCircle()} v 140 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${height}`}
                 stroke="#A15DF6"
                 strokeWidth="2"
                 fill="transparent"
-                strokeDasharray={height}
+                strokeDasharray={line1Length}
                 strokeDashoffset={
                     pathsAnimated
-                        ? height - scrollY - 179 - extraOffset
+                        ? line1Length - scrollY - 179 - extraOffset
                         : firstAnimatedValue
                 }
             />
             <animated.path
                 d={`M ${
                     width / 1.12
-                } 80 H 41 a 20,20 0 0,0 -20,20 v 94 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${height}`}
+                } 80 H 41 a 20,20 0 0,0 -20,20 v 94 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${height}`}
                 stroke="#6573EB"
                 strokeWidth="2"
                 fill="transparent"
-                strokeDasharray={height}
+                strokeDasharray={line2Length}
                 strokeDashoffset={
                     pathsAnimated
-                        ? height - scrollY - 70 - secondOffset - extraOffset
+                        ? line2Length -
+                          scrollY -
+                          70 -
+                          secondOffset -
+                          extraOffset
                         : secondAnimatedValue
                 }
             />
             <animated.path
                 d={`M ${
                     width / 1.05
-                } 100 v 30 a 20,20 0 0,1 -20,20 H 45 a 20,20 0 0,0 -20,20 v 24 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${height}`}
+                } 100 v 30 a 20,20 0 0,1 -20,20 H 45 a 20,20 0 0,0 -20,20 v 24 ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${height}`}
                 stroke="#5DBDF6"
                 strokeWidth="2"
                 fill="transparent"
-                strokeDasharray={height}
+                strokeDasharray={line3Length}
                 strokeDashoffset={
                     pathsAnimated
-                        ? height - scrollY - 73 - thirdOffset - extraOffset
+                        ? line3Length - scrollY - 73 - thirdOffset - extraOffset
                         : thirdAnimatedValue
                 }
             />
