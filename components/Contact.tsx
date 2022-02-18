@@ -1,12 +1,13 @@
 import Image from "next/image";
 import React from "react";
+import { SegmentProps } from "./About";
 import Section from "./Section";
 
 const LOGOSIZE = 70;
 
-const Contact = React.forwardRef<HTMLDivElement>((props, ref) => {
+const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
     return (
-        <Section name="Contact">
+        <Section highlighted={props.highlighted} name="Contact">
             <div
                 ref={ref}
                 className="min-w-[350px] flex justify-around items-center"

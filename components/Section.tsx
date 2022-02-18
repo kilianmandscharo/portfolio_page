@@ -1,11 +1,17 @@
 interface SectionProps {
     children: any;
     name: string;
+    highlighted: boolean;
 }
 
-const Section = ({ children, name }: SectionProps) => {
+const Section = ({ children, name, highlighted }: SectionProps) => {
     return (
-        <section id={name.toLowerCase()} className="p-4 mb-12">
+        <section
+            id={name.toLowerCase()}
+            className={`p-4 mb-12 rounded-md ${
+                highlighted ? "bg-purple-900" : "bg-neutral-700"
+            }`}
+        >
             <div className="flex justify-around items-center mb-4">
                 <div className="h-[1px] w-3/12 bg-white/90" />
                 <h2 className="text-4xl text-center mx-2">{name}</h2>

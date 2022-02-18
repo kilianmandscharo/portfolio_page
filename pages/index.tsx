@@ -73,17 +73,36 @@ const Home = () => {
             </Head>
             <div
                 ref={containerRef}
-                className="grid justify-center max-w-5xl min-w-[350px] relative mx-auto p-5 pt-8 pl-7 bg-neutral-900 text-white/90"
+                className="grid justify-center max-w-5xl min-w-[350px] relative mx-auto p-5 pt-8 pl-12 bg-neutral-900 text-white/90"
             >
                 <header className="mb-8 z-10">
                     <Navbar />
                     <h1 className="text-5xl text-center">Hi, I'm Dominik</h1>
                 </header>
                 <div className="z-10">
-                    <About />
-                    <Projects ref={projectsRef} />
-                    <Skills ref={skillsRef} />
-                    <Contact ref={contactRef} />
+                    <About
+                        highlighted={
+                            scrollY >= 0 && scrollY < projectsYPosition - 430
+                        }
+                    />
+                    <Projects
+                        highlighted={
+                            scrollY >= projectsYPosition - 430 &&
+                            scrollY < skillsYPosition - 390
+                        }
+                        ref={projectsRef}
+                    />
+                    <Skills
+                        highlighted={
+                            scrollY >= skillsYPosition - 390 &&
+                            scrollY < contactYPosition - 355
+                        }
+                        ref={skillsRef}
+                    />
+                    <Contact
+                        highlighted={scrollY >= contactYPosition - 355}
+                        ref={contactRef}
+                    />
                 </div>
                 <AnimatedLines
                     width={width}

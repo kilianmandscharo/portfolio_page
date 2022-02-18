@@ -1,4 +1,5 @@
 import React from "react";
+import { SegmentProps } from "./About";
 import {
     CIcon,
     CSSIcon,
@@ -13,9 +14,9 @@ import {
 } from "./Logos";
 import Section from "./Section";
 
-const Skills = React.forwardRef<HTMLDivElement>((props, ref) => {
+const Skills = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
     return (
-        <Section name="Technologies">
+        <Section highlighted={props.highlighted} name="Technologies">
             <div id="logo-grid" ref={ref}>
                 <HTMLIcon />
                 <CSSIcon />

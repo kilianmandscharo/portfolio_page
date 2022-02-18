@@ -1,9 +1,13 @@
 import React from "react";
 import Section from "./Section";
 
-const About = () => {
+export interface SegmentProps {
+    highlighted: boolean;
+}
+
+const About = ({ highlighted }: SegmentProps) => {
     return (
-        <Section name="About">
+        <Section name="About" highlighted={highlighted}>
             <div className="sm:columns-2 gap-x-8 sm:px-8">
                 <p>
                     My name is Dominik Heller. I like writing software with a
