@@ -8,7 +8,7 @@ export interface SegmentProps {
 const About = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
     return (
         <Section name="About" highlighted={props.highlighted}>
-            <div ref={ref} className="sm:columns-2 gap-x-8 sm:px-8">
+            <div ref={ref} className="sm:columns-2 gap-x-8 sm:px-10">
                 <p>
                     My name is Dominik Heller. I like writing software with a
                     main interest in front-end web development.

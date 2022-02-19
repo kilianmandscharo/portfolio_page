@@ -28,7 +28,6 @@ const Home = () => {
 
     const [windowWidth, windowHeight] = useWindowSize();
     const bottomReached = scrollY + windowHeight >= height - 10;
-    console.log(windowHeight + scrollY, height);
 
     useLayoutEffect(() => {
         const updateDimensions = () => {
@@ -110,8 +109,8 @@ const Home = () => {
             >
                 <header className="mb-9 z-10">
                     <Navbar />
-                    <h1 className="text-4xl pt-2 text-center font-header sm:text-6xl sm:pt-0">
-                        Hi, I'm Dominik
+                    <h1 className="text-[2rem] pt-2 text-center font-header sm:text-5xl sm:pt-1">
+                        Dominik's Projects
                     </h1>
                 </header>
                 <div className="z-10">

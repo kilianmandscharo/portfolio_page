@@ -162,7 +162,7 @@ const AnimatedLines = ({
                 } a 20,20 0 0,0 20,20 h ${
                     width - 77
                 } a 5,5 0 0,0 20,0 a 5,5 0 0,0 -20,0`}
-                stroke="#A15DF6"
+                stroke="#8B5CF6"
                 strokeWidth="2"
                 fill="transparent"
                 strokeDasharray={line1Length}
@@ -182,7 +182,7 @@ const AnimatedLines = ({
                 } a 20,20 0 0,0 20,20 h ${
                     width - 81
                 } a 5,5 0 0,0 20,0 a 5,5 0 0,0 -20,0 `}
-                stroke="#6573EB"
+                stroke="#6366F1"
                 strokeWidth="2"
                 fill="transparent"
                 strokeDasharray={line2Length}
@@ -202,7 +202,7 @@ const AnimatedLines = ({
                 } a 20,20 0 0,0 20,20 h ${
                     width - 85
                 } a 5,5 0 0,0 20,0 a 5,5 0 0,0 -20,0`}
-                stroke="#5DBDF6"
+                stroke="#14B8A6"
                 strokeWidth="2"
                 fill="transparent"
                 strokeDasharray={line3Length}

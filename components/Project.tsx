@@ -50,20 +50,21 @@ const Project = ({
     };
 
     return (
-        <div className="relative mx-auto max-w-[300px] max-h-[300px] shadow-xl mb-8 sm:mb-0">
+        <div className="relative mx-auto max-w-[300px] max-h-[300px] shadow-xl">
             {/* Backside */}
             <div
-                className={`flex flex-col justify-center absolute top-0 left-0 bottom-0 right-0 border-2 ${
+                className={`flex flex-col absolute top-0 left-0 bottom-0 right-0 p-4 border-2 ${
                     highlighted
-                        ? "bg-indigo-900  border-indigo-900"
-                        : "bg-indigo-900/50 border-indigo-900/50"
+                        ? "bg-indigo-900/80  border-indigo-900/80"
+                        : "bg-indigo-900/40 border-indigo-900/40"
                 } hover:border-white/90 transition-colors ease-in rounded-md opacity-0 ${animationsBack()}`}
                 onClick={handleClickBack}
             >
-                <h3 className="text-xl sm:text-2xl text-center mb-12">
-                    {name}
-                </h3>
-                <div className="flex flex-col gap-4 items-center justify-center">
+                <h3 className="text-xl sm:text-xl text-center my-2">{name}</h3>
+                <div className="text-base text-center mb-9">
+                    ({description})
+                </div>
+                <div className="flex flex-col text-base gap-4 items-center justify-center">
                     {website && <ProjectLink name="website" link={website} />}
                     {github && <ProjectLink name="github" link={github} />}
                 </div>

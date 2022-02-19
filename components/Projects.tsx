@@ -7,13 +7,10 @@ const Projects = React.forwardRef<HTMLDivElement, SegmentProps>(
     (props, ref) => {
         return (
             <Section highlighted={props.highlighted} name="Projects">
-                <div
-                    ref={ref}
-                    className="grid justify-center sm:grid-cols-2 sm:gap-20"
-                >
+                <div ref={ref} className="projects-grid sm:px-10">
                     <Project
                         name="Visualizing Algorithms"
-                        description="A website for visualizing different algorithms, from pathfinding and sorting algorithms to the Game of Life and solving Sudokus with backtracking. Made with React and Typescript."
+                        description="TypeScript, React"
                         img="/algorithms.png"
                         highlighted={props.highlighted}
                         website="https://visualize-algorithms.netlify.app/"
@@ -21,7 +18,7 @@ const Projects = React.forwardRef<HTMLDivElement, SegmentProps>(
                     />
                     <Project
                         name="Wortspiel"
-                        description="A word game based on the popular game WORDLE, but with German words. A new word is playable each day. Made with React, TypeScript and Next.js"
+                        description="TypeScript, React,  Next"
                         img="/wortspiel.png"
                         highlighted={props.highlighted}
                         website="https://wortspiel.netlify.app/"
@@ -29,17 +26,31 @@ const Projects = React.forwardRef<HTMLDivElement, SegmentProps>(
                     />
                     <Project
                         name="Runner App"
-                        description="An app to record running activities. Runs can be visualized individually concerning altitude, speed and distance, or all at once sorted by date. See the repository's readme for more screenshots. Made with React Native."
+                        description="TypeScript, React Native"
                         img="/runner.png"
                         highlighted={props.highlighted}
                         github="https://github.com/kilianmandscharo/running_app"
                     />
                     <Project
                         name="Darts Optimizer"
-                        description="A first try at calculating the optimal spot to aim for on a dart board, given a certain distribution radius. Made with Python, Numpy and Matplotlib."
+                        description="Python, Numpy, Matplotlib"
                         highlighted={props.highlighted}
                         img="/darts.png"
                         github="https://github.com/kilianmandscharo/darts_visualization"
+                    />
+                    <Project
+                        name="Snake"
+                        description="C, ncurses"
+                        highlighted={props.highlighted}
+                        img="/snake.png"
+                        github="https://github.com/kilianmandscharo/snake"
+                    />
+                    <Project
+                        name="Visualizing Algorithms 2"
+                        description="Python, Tkinter"
+                        highlighted={props.highlighted}
+                        img="/algorithms2.png"
+                        github="https://github.com/kilianmandscharo/algovis"
                     />
                 </div>
             </Section>
