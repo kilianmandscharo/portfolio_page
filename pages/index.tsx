@@ -17,6 +17,7 @@ const Home = () => {
     const [projectsYPosition, setProjectsYPosition] = useState(0);
     const [skillsYPosition, setSkillsYPosition] = useState(0);
     const [contactYPosition, setContactYPosition] = useState(0);
+    const [bottomReached, setBottomReached] = useState(false);
     const scrollY = useScroll();
 
     const containerRef = useRef(null);
@@ -26,33 +27,7 @@ const Home = () => {
     const contactRef = useRef(null);
 
     useLayoutEffect(() => {
-        const container: any = containerRef.current;
-        if (container) {
-            setWidth(container.offsetWidth);
-            setHeight(container.offsetHeight);
-        }
-
-        const about: any = aboutRef.current;
-        if (about) {
-            setAboutYPosition(about.offsetTop - ITEM_OFFSET);
-        }
-
-        const projects: any = projectsRef.current;
-        if (projects) {
-            setProjectsYPosition(projects.offsetTop - ITEM_OFFSET);
-        }
-
-        const skills: any = skillsRef.current;
-        if (skills) {
-            setSkillsYPosition(skills.offsetTop - ITEM_OFFSET);
-        }
-
-        const contact: any = contactRef.current;
-        if (contact) {
-            setContactYPosition(contact.offsetTop - ITEM_OFFSET);
-        }
-
-        const handleResize = () => {
+        const updateDimensions = () => {
             const cRef: any = containerRef.current;
             const aRef: any = aboutRef.current;
             const pRef: any = projectsRef.current;
@@ -75,11 +50,46 @@ const Home = () => {
                 setContactYPosition(coRef.offsetTop - ITEM_OFFSET);
             }
         };
-        window.addEventListener("resize", handleResize);
+        updateDimensions();
+        window.addEventListener("resize", updateDimensions);
         return () => {
-            window.removeEventListener("resize", handleResize);
+            window.removeEventListener("resize", updateDimensions);
         };
     }, []);
+
+    const aboutHighlighted = () => {
+        return scrollY >= 0 && scrollY < projectsYPosition - 430;
+    };
+
+    const projectsHighlighted = () => {
+        if (bottomReached) {
+            return false;
+        } else {
+            return (
+                scrollY >= projectsYPosition - 430 &&
+                scrollY < skillsYPosition - 390
+            );
+        }
+    };
+
+    const skillsHighlighted = () => {
+        if (bottomReached) {
+            return false;
+        } else {
+            return (
+                scrollY >= skillsYPosition - 390 &&
+                scrollY < contactYPosition - 355
+            );
+        }
+    };
+
+    const contactHighlighted = () => {
+        if (bottomReached) {
+            return true;
+        } else {
+            return scrollY >= contactYPosition - 355;
+        }
+    };
 
     return (
         <>
@@ -101,28 +111,14 @@ const Home = () => {
                     </h1>
                 </header>
                 <div className="z-10">
-                    <About
-                        highlighted={
-                            scrollY >= 0 && scrollY < projectsYPosition - 430
-                        }
-                        ref={aboutRef}
-                    />
+                    <About highlighted={aboutHighlighted()} ref={aboutRef} />
                     <Projects
-                        highlighted={
-                            scrollY >= projectsYPosition - 430 &&
-                            scrollY < skillsYPosition - 390
-                        }
+                        highlighted={projectsHighlighted()}
                         ref={projectsRef}
                     />
-                    <Skills
-                        highlighted={
-                            scrollY >= skillsYPosition - 390 &&
-                            scrollY < contactYPosition - 355
-                        }
-                        ref={skillsRef}
-                    />
+                    <Skills highlighted={skillsHighlighted()} ref={skillsRef} />
                     <Contact
-                        highlighted={scrollY >= contactYPosition - 355}
+                        highlighted={contactHighlighted()}
                         ref={contactRef}
                     />
                 </div>
@@ -134,6 +130,7 @@ const Home = () => {
                     projectsYPosition={projectsYPosition}
                     skillsYPosition={skillsYPosition}
                     contactYPosition={contactYPosition}
+                    handleBottomReached={setBottomReached}
                 />
             </div>
         </>
