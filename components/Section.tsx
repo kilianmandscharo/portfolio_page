@@ -9,7 +9,7 @@ const Section = ({ children, name, highlighted }: SectionProps) => {
         <section
             id={name.toLowerCase()}
             className={`p-4 mb-12 pb-12 pt-8 rounded-md ${
-                highlighted ? "bg-violet-900/70" : "bg-violet-900/30"
+                highlighted ? "bg-violet-900/50" : "bg-violet-900/20"
             }`}
         >
             <div className="flex justify-around items-center mb-4">

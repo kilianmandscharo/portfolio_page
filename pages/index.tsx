@@ -97,11 +97,22 @@ const Home = () => {
     return (
         <>
             <Head>
-                <title>Dominik Heller</title>
+                <title>Dominik's Projects</title>
                 <meta
                     name="viewport"
                     content="initial-scale=1.0, width=device-width"
                 />
+                <meta charSet="utf-8" />
+                <meta name="author" content="Dominik Heller" />
+                <meta
+                    name="description"
+                    content="A display of my projects and a little bit about me."
+                />
+                <meta
+                    name="keywords"
+                    content="portfolio, front-end, programming"
+                />
+                <link rel="shortcut icon" href="favicon.ico" />
             </Head>
             <div
                 ref={containerRef}
