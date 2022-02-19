@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import useScroll from "../hooks/useScroll";
+import useWindowSize from "../hooks/useWindowSize";
 
 const ITEM_OFFSET = 60;
 
@@ -17,7 +18,6 @@ const Home = () => {
     const [projectsYPosition, setProjectsYPosition] = useState(0);
     const [skillsYPosition, setSkillsYPosition] = useState(0);
     const [contactYPosition, setContactYPosition] = useState(0);
-    const [bottomReached, setBottomReached] = useState(false);
     const scrollY = useScroll();
 
     const containerRef = useRef(null);
@@ -25,6 +25,10 @@ const Home = () => {
     const projectsRef = useRef(null);
     const skillsRef = useRef(null);
     const contactRef = useRef(null);
+
+    const [windowWidth, windowHeight] = useWindowSize();
+    const bottomReached = scrollY + windowHeight >= height - 10;
+    console.log(windowHeight + scrollY, height);
 
     useLayoutEffect(() => {
         const updateDimensions = () => {
@@ -130,7 +134,7 @@ const Home = () => {
                     projectsYPosition={projectsYPosition}
                     skillsYPosition={skillsYPosition}
                     contactYPosition={contactYPosition}
-                    handleBottomReached={setBottomReached}
+                    bottomReached={bottomReached}
                 />
             </div>
         </>

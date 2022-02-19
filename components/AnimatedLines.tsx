@@ -1,6 +1,5 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
-import useWindowSize from "../hooks/useWindowSize";
 
 interface AnimatedLinesProps {
     width: number;
@@ -10,7 +9,7 @@ interface AnimatedLinesProps {
     projectsYPosition: number;
     skillsYPosition: number;
     contactYPosition: number;
-    handleBottomReached: Dispatch<SetStateAction<boolean>>;
+    bottomReached: boolean;
 }
 
 const AnimatedLines = ({
@@ -21,15 +20,10 @@ const AnimatedLines = ({
     projectsYPosition,
     skillsYPosition,
     contactYPosition,
-    handleBottomReached,
+    bottomReached,
 }: AnimatedLinesProps) => {
     const [pathsAnimated, setPathsAnimated] = useState(false);
     const [show, setShow] = useState(false);
-
-    const [windowWidth, windowHeight] = useWindowSize();
-    const reachedBottom = scrollY + windowHeight > 2520;
-
-    handleBottomReached(reachedBottom);
 
     useEffect(() => {
         setTimeout(() => {
@@ -174,7 +168,7 @@ const AnimatedLines = ({
                 strokeDasharray={line1Length}
                 strokeDashoffset={
                     pathsAnimated
-                        ? reachedBottom
+                        ? bottomReached
                             ? firstAnimatedValueToBottom
                             : line1TotalOffset
                         : firstAnimatedValue
@@ -194,7 +188,7 @@ const AnimatedLines = ({
                 strokeDasharray={line2Length}
                 strokeDashoffset={
                     pathsAnimated
-                        ? reachedBottom
+                        ? bottomReached
                             ? secondAnimatedValueToBottom
                             : line2TotalOffset
                         : secondAnimatedValue
@@ -214,7 +208,7 @@ const AnimatedLines = ({
                 strokeDasharray={line3Length}
                 strokeDashoffset={
                     pathsAnimated
-                        ? reachedBottom
+                        ? bottomReached
                             ? thirdAnimatedValueToBottom
                             : line3TotalOffset
                         : thirdAnimatedValue
