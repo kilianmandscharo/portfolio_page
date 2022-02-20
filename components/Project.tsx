@@ -50,17 +50,19 @@ const Project = ({
     };
 
     return (
-        <div className="relative mx-auto max-w-[300px] max-h-[300px] shadow-xl">
+        <div className="relative mx-auto max-w-[300px] max-h-[300px] shadow-lg">
             {/* Backside */}
             <div
                 className={`flex flex-col absolute top-0 left-0 bottom-0 right-0 p-4 border-2 ${
                     highlighted
-                        ? "bg-indigo-900/80  border-indigo-900/80"
-                        : "bg-indigo-900/40 border-indigo-900/40"
+                        ? "bg-gray-800  border-gray-800"
+                        : "bg-gray-800/50 border-gray-800/50"
                 } hover:border-white/90 transition-colors ease-in rounded-md opacity-0 ${animationsBack()}`}
                 onClick={handleClickBack}
             >
-                <h3 className="text-xl sm:text-xl text-center my-2">{name}</h3>
+                <h3 className="text-xl sm:text-xl text-center my-2 text-red-300">
+                    {name}
+                </h3>
                 <div className="text-base text-center mb-9">
                     ({description})
                 </div>
@@ -71,16 +73,14 @@ const Project = ({
             </div>
             {/* Frontside */}
             <div
-                className={`grid justify-center rounded-md border-4 ${
-                    highlighted ? "border-indigo-500" : "border-indigo-500/50"
-                } hover:border-white/90 transition-colors ease-in ${animationsFront()}`}
+                className={`grid justify-center rounded-md transition-colors ease-in ${animationsFront()}`}
                 onClick={handleClickFront}
             >
                 <Image
                     src={img}
                     width="300"
                     height="300"
-                    className="rounded-sm sm:opacity-50 hover:opacity-90 transition-all ease-linear"
+                    className="rounded-md sm:opacity-50 hover:opacity-90 transition-all ease-linear"
                     alt={`${name} project image`}
                 />
             </div>

@@ -8,7 +8,7 @@ const Navbar = () => {
                     (name) => (
                         <li
                             key={name}
-                            className="hover:text-violet-900 transition-all ease-linear"
+                            className="hover:text-red-300 transition-all ease-linear"
                         >
                             <a href={`#${name.toLowerCase()}`}>{name}</a>
                         </li>

@@ -79,7 +79,7 @@ const AnimatedLines = ({
 
     // Initial line animations on load
     const delay = 0;
-    const animationDuration = 2000;
+    const animationDuration = 1500;
 
     const { firstAnimatedValue } = useSpring({
         reset: true,
@@ -162,7 +162,7 @@ const AnimatedLines = ({
                 } a 20,20 0 0,0 20,20 h ${
                     width - 77
                 } a 5,5 0 0,0 20,0 a 5,5 0 0,0 -20,0`}
-                stroke="#8B5CF6"
+                stroke="#9CA3AF"
                 strokeWidth="2"
                 fill="transparent"
                 strokeDasharray={line1Length}
@@ -182,7 +182,7 @@ const AnimatedLines = ({
                 } a 20,20 0 0,0 20,20 h ${
                     width - 81
                 } a 5,5 0 0,0 20,0 a 5,5 0 0,0 -20,0 `}
-                stroke="#6366F1"
+                stroke="#9CA3AF"
                 strokeWidth="2"
                 fill="transparent"
                 strokeDasharray={line2Length}
@@ -202,7 +202,7 @@ const AnimatedLines = ({
                 } a 20,20 0 0,0 20,20 h ${
                     width - 85
                 } a 5,5 0 0,0 20,0 a 5,5 0 0,0 -20,0`}
-                stroke="#14B8A6"
+                stroke="#9CA3AF"
                 strokeWidth="2"
                 fill="transparent"
                 strokeDasharray={line3Length}

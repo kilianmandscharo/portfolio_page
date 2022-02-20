@@ -116,11 +116,11 @@ const Home = () => {
             </Head>
             <div
                 ref={containerRef}
-                className="grid justify-center max-w-5xl min-w-[350px] relative mx-auto p-5 pt-8 pl-12 bg-neutral-900 text-white/90 font-normal"
+                className="grid justify-center max-w-5xl min-w-[350px] relative mx-auto p-5 pt-8 pl-8 bg-gray-900 text-white/90 font-normal"
             >
                 <header className="mb-9 z-10">
                     <Navbar />
-                    <h1 className="text-[2rem] pt-2 text-center font-header sm:text-5xl sm:pt-1">
+                    <h1 className="text-[2rem] pt-[0.4rem] text-center font-header sm:text-5xl sm:pt-1">
                         Dominik's Projects
                     </h1>
                 </header>
