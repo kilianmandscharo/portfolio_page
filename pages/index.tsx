@@ -6,6 +6,7 @@ import Contact from "../components/Contact";
 import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
+import ThemeSwitch from "../components/ThemeSwitch";
 import useScroll from "../hooks/useScroll";
 import useWindowSize from "../hooks/useWindowSize";
 
@@ -119,6 +120,7 @@ const Home = () => {
                 className="grid justify-center max-w-5xl min-w-[350px] relative mx-auto p-5 pt-8 pl-8 bg-gray-900 text-white/90 font-normal"
             >
                 <header className="mb-9 z-10">
+                    <ThemeSwitch />
                     <Navbar />
                     <h1 className="text-[2rem] pt-[0.4rem] text-center font-header sm:text-5xl sm:pt-1">
                         Dominik's Projects

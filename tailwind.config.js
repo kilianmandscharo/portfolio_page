@@ -25,12 +25,30 @@ module.exports = {
           "100%": {
             transform: "rotateY(0deg)",
             opacity: "1"
+          },
+        },
+        switchRight: {
+          "0%": {
+            marginLeft: "0",
+          },
+          "100%": {
+            marginLeft: "32px",
           }
+        },
+        switchLeft: {
+          "0%": {
+            marginLeft: "32px",
+          },
+          "100%": {
+            marginLeft: "0",
+          }  
         }
       },
       animation: {
         flipOut: "flipOut 0.5s 1 forwards",
-        flipIn: "flipIn 0.5s 1 forwards"
+        flipIn: "flipIn 0.5s 1 forwards",
+        switchRight: "switchRight 0.5s 1 forwards",
+        switchLeft: "switchLeft 0.5s 1 forwards"
       }
     },
   },
