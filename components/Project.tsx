@@ -1,26 +1,20 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../pages";
 import ProjectLink from "./ProjectLink";
 
 interface ProjectProps {
     name: string;
     img: string;
     description: string;
-    highlighted: boolean;
     website?: string;
     github?: string;
 }
 
-const Project = ({
-    name,
-    img,
-    highlighted,
-    website,
-    github,
-    description,
-}: ProjectProps) => {
+const Project = ({ name, img, website, github, description }: ProjectProps) => {
     const [flip, setFlip] = useState(false);
     const [flipBack, setFlipBack] = useState(false);
+    const { theme, toggleTheme } = useContext(ThemeContext);
 
     const handleClickFront = () => {
         if (flip) {
@@ -54,16 +48,16 @@ const Project = ({
             {/* Backside */}
             <div
                 className={`flex flex-col absolute top-0 left-0 bottom-0 right-0 p-4 border-2 ${
-                    highlighted
-                        ? "bg-gray-800  border-gray-800"
-                        : "bg-gray-800/50 border-gray-800/50"
+                    theme === "dark"
+                        ? "bg-gray-800 border-gray-800"
+                        : "bg-gray-700 border-gray-700"
                 } hover:border-white/90 transition-colors ease-in rounded-md opacity-0 ${animationsBack()}`}
                 onClick={handleClickBack}
             >
                 <h3 className="text-xl sm:text-xl text-center my-2 text-red-300">
                     {name}
                 </h3>
-                <div className="text-base text-center mb-9">
+                <div className="text-base text-center mb-9 text-white/90">
                     ({description})
                 </div>
                 <div className="flex flex-col text-base gap-4 items-center justify-center">

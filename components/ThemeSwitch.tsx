@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../pages";
 
 enum Position {
     dark,
@@ -7,25 +8,27 @@ enum Position {
 
 export default function ThemeSwitch() {
     const [position, setPosition] = useState(Position.dark);
+    const { theme, toggleTheme } = useContext(ThemeContext);
+
+    const handleClick = () => {
+        setPosition(
+            position === Position.dark ? Position.light : Position.dark
+        );
+        toggleTheme();
+    };
 
     return (
-        <div className="absolute left-10 w-[4.5rem] h-8 bg-gray-600 flex justify-around items-center rounded-full">
+        <div className="absolute left-10 w-16 h-8 bg-gray-600 flex justify-around items-center rounded-full">
             <div
                 className={`bg-gray-300 absolute w-8 h-8 border-2 border-red-300 rounded-full ${
                     position === Position.dark
                         ? "animate-switchLeft"
                         : "animate-switchRight"
                 }`}
-                onClick={() =>
-                    setPosition(
-                        position === Position.dark
-                            ? Position.light
-                            : Position.dark
-                    )
-                }
+                onClick={handleClick}
             ></div>
-            <Moon />
             <Sun />
+            <Moon />
         </div>
     );
 }

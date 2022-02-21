@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import About from "../components/About";
 import AnimatedLines from "../components/AnimatedLines";
 import Contact from "../components/Contact";
@@ -11,6 +11,12 @@ import useScroll from "../hooks/useScroll";
 import useWindowSize from "../hooks/useWindowSize";
 
 const ITEM_OFFSET = 60;
+
+type Theme = "dark" | "light";
+type ThemeContext = { theme: Theme; toggleTheme: () => void };
+export const ThemeContext = React.createContext<ThemeContext>(
+    {} as ThemeContext
+);
 
 const Home = () => {
     const [width, setWidth] = useState(0);
@@ -27,8 +33,11 @@ const Home = () => {
     const skillsRef = useRef(null);
     const contactRef = useRef(null);
 
-    const [windowWidth, windowHeight] = useWindowSize();
+    const [_, windowHeight] = useWindowSize();
     const bottomReached = scrollY + windowHeight >= height - 10;
+
+    const [theme, setTheme] = useState<Theme>("dark");
+    const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
     useLayoutEffect(() => {
         const updateDimensions = () => {
@@ -115,40 +124,58 @@ const Home = () => {
                 />
                 <link rel="shortcut icon" href="favicon.ico" />
             </Head>
-            <div
-                ref={containerRef}
-                className="grid justify-center max-w-5xl min-w-[350px] relative mx-auto p-5 pt-8 pl-8 bg-gray-900 text-white/90 font-normal"
-            >
-                <header className="mb-9 z-10">
-                    <ThemeSwitch />
-                    <Navbar />
-                    <h1 className="text-[2rem] pt-[0.4rem] text-center font-header sm:text-5xl sm:pt-1">
-                        Dominik's Projects
-                    </h1>
-                </header>
-                <div className="z-10">
-                    <About highlighted={aboutHighlighted()} ref={aboutRef} />
-                    <Projects
-                        highlighted={projectsHighlighted()}
-                        ref={projectsRef}
-                    />
-                    <Skills highlighted={skillsHighlighted()} ref={skillsRef} />
-                    <Contact
-                        highlighted={contactHighlighted()}
-                        ref={contactRef}
-                    />
+            <ThemeContext.Provider value={{ theme, toggleTheme }}>
+                <div
+                    className={`w-full h-full ${
+                        theme === "dark" ? "bg-gray-900" : "bg-white"
+                    }`}
+                >
+                    <div
+                        ref={containerRef}
+                        className={`grid justify-center max-w-5xl min-w-[350px] relative mx-auto p-5 pt-8 pl-8 font-normal ${
+                            theme === "dark"
+                                ? "bg-gray-900 text-white/90"
+                                : "bg-white text-gray-900"
+                        }`}
+                    >
+                        <header className="mb-9 z-10">
+                            <ThemeSwitch />
+                            <Navbar />
+                            <h1 className="text-[2rem] pt-[0.4rem] text-center font-header sm:text-5xl sm:pt-1">
+                                Dominik's Projects
+                            </h1>
+                        </header>
+                        <div className="z-10">
+                            <About
+                                highlighted={aboutHighlighted()}
+                                ref={aboutRef}
+                            />
+                            <Projects
+                                highlighted={projectsHighlighted()}
+                                ref={projectsRef}
+                            />
+                            <Skills
+                                highlighted={skillsHighlighted()}
+                                ref={skillsRef}
+                            />
+                            <Contact
+                                highlighted={contactHighlighted()}
+                                ref={contactRef}
+                            />
+                        </div>
+                        <AnimatedLines
+                            width={width}
+                            height={height}
+                            scrollY={scrollY}
+                            aboutYPosition={aboutYPosition}
+                            projectsYPosition={projectsYPosition}
+                            skillsYPosition={skillsYPosition}
+                            contactYPosition={contactYPosition}
+                            bottomReached={bottomReached}
+                        />
+                    </div>
                 </div>
-                <AnimatedLines
-                    width={width}
-                    height={height}
-                    scrollY={scrollY}
-                    aboutYPosition={aboutYPosition}
-                    projectsYPosition={projectsYPosition}
-                    skillsYPosition={skillsYPosition}
-                    contactYPosition={contactYPosition}
-                    bottomReached={bottomReached}
-                />
-            </div>
+            </ThemeContext.Provider>
         </>
     );
 };

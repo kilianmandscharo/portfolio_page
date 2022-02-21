@@ -1,11 +1,14 @@
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../pages";
 import { SegmentProps } from "./About";
 import Section from "./Section";
 
 const LOGOSIZE = 70;
 
 const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
+    const { theme, toggleTheme } = useContext(ThemeContext);
+
     return (
         <Section highlighted={props.highlighted} name="Contact">
             <div
@@ -15,7 +18,9 @@ const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
                 <a
                     href="https://github.com/kilianmandscharo"
                     target="blank"
-                    className="flex items-center hover:opacity-70 bg-gray-300 p-2 rounded-xl"
+                    className={`flex items-center hover:opacity-70 ${
+                        theme === "dark" ? "bg-gray-300" : ""
+                    } p-2 rounded-xl`}
                 >
                     <Image
                         src="/github_logo.png"
@@ -26,7 +31,9 @@ const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
                 </a>
                 <a
                     href="mailto:domi.heller@gmx.de"
-                    className="hover:opacity-70 bg-gray-300 p-2 rounded-xl"
+                    className={`hover:opacity-70 p-2 rounded-xl ${
+                        theme === "dark" ? "bg-gray-300" : ""
+                    }`}
                 >
                     <svg
                         width={LOGOSIZE}
@@ -47,3 +54,4 @@ const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
 });
 
 export default Contact;
+``;

@@ -32,12 +32,12 @@ module.exports = {
             left: "0",
           },
           "100%": {
-            left: "40px",
+            left: "32px",
           }
         },
         switchLeft: {
           "0%": {
-            left: "40px",
+            left: "32px",
           },
           "100%": {
             left: "0",
@@ -47,8 +47,8 @@ module.exports = {
       animation: {
         flipOut: "flipOut 0.5s 1 forwards",
         flipIn: "flipIn 0.5s 1 forwards",
-        switchRight: "switchRight 0.5s 1 forwards",
-        switchLeft: "switchLeft 0.5s 1 forwards"
+        switchRight: "switchRight 0.3s 1 forwards ease-out",
+        switchLeft: "switchLeft 0.3s 1 forwards ease-out"
       }
     },
   },

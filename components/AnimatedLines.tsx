@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
+import { ThemeContext } from "../pages";
 
 interface AnimatedLinesProps {
     width: number;
@@ -24,6 +25,8 @@ const AnimatedLines = ({
 }: AnimatedLinesProps) => {
     const [pathsAnimated, setPathsAnimated] = useState(false);
     const [show, setShow] = useState(false);
+    const { theme, toggleTheme } = useContext(ThemeContext);
+    const lineColor = theme === "dark" ? "#9CA3AF" : "#1F2937";
 
     useEffect(() => {
         setTimeout(() => {
@@ -33,9 +36,6 @@ const AnimatedLines = ({
 
     const makeCircle = () => {
         return `a 5,5 0 0,0 0,20 a 5,5 0 0,0 0,-20 a 5,5 0 0,0 0,20`;
-    };
-    const makeCurve = (val1: number, val2: number) => {
-        return ``;
     };
 
     // Line calculations
@@ -160,7 +160,7 @@ const AnimatedLines = ({
         >
             <animated.path
                 d={`M 17 34 ${makeCircle()} V${aboutYPosition} ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()}`}
-                stroke="#9CA3AF"
+                stroke={lineColor}
                 strokeWidth="2"
                 fill="transparent"
                 strokeDasharray={line1Length}
@@ -176,7 +176,7 @@ const AnimatedLines = ({
                 d={`M ${
                     width / 1.12
                 } 80 a 5,5 0 0,0 -20,0 a 5,5 0 0,0 20,0 a 5,5 0 0,0 -20,0 H 41 a 20,20 0 0,0 -20,20 V ${aboutYPosition} ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()}`}
-                stroke="#9CA3AF"
+                stroke={lineColor}
                 strokeWidth="2"
                 fill="transparent"
                 strokeDasharray={line2Length}
@@ -192,7 +192,7 @@ const AnimatedLines = ({
                 d={`M ${
                     width / 1.05
                 } 80 ${makeCircle()} v 30 a 20,20 0 0,1 -20,20 H 45 a 20,20 0 0,0 -20,20 V ${aboutYPosition} ${makeCircle()} V ${projectsYPosition} ${makeCircle()} V ${skillsYPosition} ${makeCircle()} V ${contactYPosition} ${makeCircle()}`}
-                stroke="#9CA3AF"
+                stroke={lineColor}
                 strokeWidth="2"
                 fill="transparent"
                 strokeDasharray={line3Length}
