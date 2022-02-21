@@ -9,8 +9,11 @@ interface SectionProps {
 
 const Section = ({ children, name, highlighted }: SectionProps) => {
     const { theme, toggleTheme } = useContext(ThemeContext);
-    const highlightedColor = theme === "dark" ? "red-300" : "red-400";
-    const nonHighlightedColor = theme === "dark" ? "white/90" : "gray-900";
+    const hightlightedBg = theme === "dark" ? "bg-red-300" : "bg-red-400";
+    const hightlightedText = theme === "dark" ? "text-red-300" : "text-red-400";
+    const nonHighlightedBg = theme === "dark" ? "bg-white/90" : "bg-gray-900";
+    const nonHighlightedText =
+        theme === "dark" ? "text-white/90" : "text-gray-900";
 
     return (
         <section
@@ -20,25 +23,19 @@ const Section = ({ children, name, highlighted }: SectionProps) => {
             <div className="flex justify-around items-center mb-4">
                 <div
                     className={`h-[1px] w-3/12 ${
-                        highlighted
-                            ? `bg-${highlightedColor}`
-                            : `bg-${nonHighlightedColor}`
+                        highlighted ? hightlightedBg : nonHighlightedBg
                     }`}
                 />
                 <h2
                     className={`text-3xl sm:text-4xl font-header text-center mx-2 ${
-                        highlighted
-                            ? `text-${highlightedColor}`
-                            : `text-${nonHighlightedColor}`
+                        highlighted ? hightlightedText : nonHighlightedText
                     }`}
                 >
                     {name}
                 </h2>
                 <div
                     className={`h-[1px] w-3/12 ${
-                        highlighted
-                            ? `bg-${highlightedColor}`
-                            : `bg-${nonHighlightedColor}`
+                        highlighted ? hightlightedBg : nonHighlightedBg
                     }`}
                 />
             </div>

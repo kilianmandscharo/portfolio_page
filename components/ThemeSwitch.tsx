@@ -18,14 +18,16 @@ export default function ThemeSwitch() {
     };
 
     return (
-        <div className="absolute left-10 w-16 h-8 bg-gray-600 flex justify-around items-center rounded-full">
+        <div
+            onClick={handleClick}
+            className="absolute left-10 w-16 h-8 bg-gray-600 flex justify-around items-center rounded-full"
+        >
             <div
-                className={`bg-gray-300 absolute w-8 h-8 border-2 border-red-300 rounded-full ${
+                className={`bg-white absolute w-8 h-8 border-4  rounded-full ${
                     position === Position.dark
-                        ? "animate-switchLeft"
-                        : "animate-switchRight"
+                        ? "animate-switchLeft border-red-300"
+                        : "animate-switchRight border-red-400"
                 }`}
-                onClick={handleClick}
             ></div>
             <Sun />
             <Moon />
@@ -43,8 +45,8 @@ function Moon() {
             xmlns="http://www.w3.org/2000/svg"
         >
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M55.6562 0.318133C37.1369 37.7092 43.4468 84.2752 74.5858 115.414C105.725 146.553 152.291 152.863 189.682 134.344C184.976 143.846 178.666 152.756 170.752 160.669C131.7 199.721 68.3834 199.721 29.3309 160.669C-9.72147 121.617 -9.72148 58.3001 29.3309 19.2477C37.2443 11.3343 46.154 5.02448 55.6562 0.318133Z"
                 fill="#EEE48D"
             />

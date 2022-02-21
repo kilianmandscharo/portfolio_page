@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { ThemeContext } from "../pages";
 import Contact from "./Contact";
 
 const Navbar = () => {
+    const { theme, toggleTheme } = useContext(ThemeContext);
+
     return (
         <nav className="mb-8 flex justify-center">
             <ul className="flex flex-row justify-around gap-4 sm:gap-8">
@@ -8,7 +12,11 @@ const Navbar = () => {
                     (name) => (
                         <li
                             key={name}
-                            className="hover:text-red-300 transition-all ease-linear"
+                            className={`${
+                                theme === "dark"
+                                    ? "hover:text-red-300"
+                                    : "hover:text-red-400"
+                            } transition-all ease-linear`}
                         >
                             <a href={`#${name.toLowerCase()}`}>{name}</a>
                         </li>
