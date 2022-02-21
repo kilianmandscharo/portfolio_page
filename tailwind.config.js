@@ -29,18 +29,18 @@ module.exports = {
         },
         switchRight: {
           "0%": {
-            marginLeft: "0",
+            left: "0",
           },
           "100%": {
-            marginLeft: "32px",
+            left: "40px",
           }
         },
         switchLeft: {
           "0%": {
-            marginLeft: "32px",
+            left: "40px",
           },
           "100%": {
-            marginLeft: "0",
+            left: "0",
           }  
         }
       },

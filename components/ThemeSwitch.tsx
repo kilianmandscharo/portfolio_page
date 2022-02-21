@@ -9,9 +9,9 @@ export default function ThemeSwitch() {
     const [position, setPosition] = useState(Position.dark);
 
     return (
-        <div className="absolute left-10 w-16 h-8 bg-gray-300 rounded-full">
+        <div className="absolute left-10 w-[4.5rem] h-8 bg-gray-600 flex justify-around items-center rounded-full">
             <div
-                className={`bg-gray-600 w-8 h-8 border-2 flex justify-center items-center border-red-300 rounded-full ${
+                className={`bg-gray-300 absolute w-8 h-8 border-2 border-red-300 rounded-full ${
                     position === Position.dark
                         ? "animate-switchLeft"
                         : "animate-switchRight"
@@ -23,10 +23,9 @@ export default function ThemeSwitch() {
                             : Position.dark
                     )
                 }
-            >
-                {position === Position.dark && <Moon />}
-                {position === Position.light && <Sun />}
-            </div>
+            ></div>
+            <Moon />
+            <Sun />
         </div>
     );
 }
@@ -34,36 +33,18 @@ export default function ThemeSwitch() {
 function Moon() {
     return (
         <svg
-            width="30"
-            height="30"
-            viewBox="0 0 259 259"
+            width="20"
+            height="20"
+            viewBox="0 0 190 190"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="pr-1 pt-1"
         >
-            <mask
-                id="mask0_9_11"
-                style={{ maskType: "alpha" }}
-                maskUnits="userSpaceOnUse"
-                x="0"
-                y="0"
-                width="259"
-                height="259"
-            >
-                <path
-                    d="M0.806589 111.822L111.822 0.806554L107.531 27.4511C94.6304 107.548 169.916 173.574 247.644 150.332L258.193 147.178L147.178 258.193L0.806589 111.822Z"
-                    fill="#C4C4C4"
-                />
-            </mask>
-            <g mask="url(#mask0_9_11)">
-                <circle
-                    cx="148.592"
-                    cy="109.701"
-                    r="100"
-                    transform="rotate(-45 148.592 109.701)"
-                    fill="#EEE48D"
-                />
-            </g>
+            <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M55.6562 0.318133C37.1369 37.7092 43.4468 84.2752 74.5858 115.414C105.725 146.553 152.291 152.863 189.682 134.344C184.976 143.846 178.666 152.756 170.752 160.669C131.7 199.721 68.3834 199.721 29.3309 160.669C-9.72147 121.617 -9.72148 58.3001 29.3309 19.2477C37.2443 11.3343 46.154 5.02448 55.6562 0.318133Z"
+                fill="#EEE48D"
+            />
         </svg>
     );
 }
