@@ -20,7 +20,7 @@ export default function ThemeSwitch() {
     return (
         <div
             onClick={handleClick}
-            className="absolute left-10 w-16 h-8 bg-gray-600 flex justify-around items-center rounded-full"
+            className="absolute right-10 w-16 h-8 bg-gray-600 flex justify-around items-center rounded-full"
         >
             <div
                 className={`bg-white absolute w-8 h-8 border-4  rounded-full ${
