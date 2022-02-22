@@ -141,7 +141,7 @@ const Home = () => {
                         <header className="flex justify-center items-center flex-col mb-9 z-10">
                             <ThemeSwitch />
                             <Navbar />
-                            <h1 className="text-[2rem] text-center font-header sm:text-5xl mt-8 mb-[-2rem]">
+                            <h1 className="text-[2rem] text-center font-header sm:text-5xl mt-8 mb-[-2rem] sm:mb-0">
                                 Dominik's Projects
                             </h1>
                         </header>

@@ -7,7 +7,7 @@ const Navbar = () => {
 
     return (
         <nav className="mb-8 flex justify-center">
-            <ul className="flex flex-row text-[14px] sm:text-base justify-around gap-4 sm:gap-8">
+            <ul className="flex flex-row text-[14px] sm:text-base justify-around gap-4 sm:gap-8 pt-[2px] sm:pt-0">
                 {["About", "Projects", "Technologies", "Contact"].map(
                     (name) => (
                         <li

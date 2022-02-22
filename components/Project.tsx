@@ -49,9 +49,9 @@ const Project = ({ name, img, website, github, description }: ProjectProps) => {
             <div
                 className={`flex flex-col absolute top-0 left-0 bottom-0 right-0 p-4 border-2 ${
                     theme === "dark"
-                        ? "bg-gray-800 border-gray-800"
-                        : "bg-gray-700 border-gray-700"
-                } hover:border-white/90 transition-colors ease-in rounded-md opacity-0 ${animationsBack()}`}
+                        ? "bg-gray-800 border-gray-800 hover:border-white/90"
+                        : "bg-gray-700 border-gray-700 hover:border-red-400"
+                } transition-colors ease-in rounded-md opacity-0 ${animationsBack()}`}
                 onClick={handleClickBack}
             >
                 <h3 className="text-xl sm:text-xl text-center my-2 text-red-300">
