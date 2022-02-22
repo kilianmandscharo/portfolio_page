@@ -9,11 +9,11 @@ const About = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
     return (
         <Section name="About" highlighted={props.highlighted}>
             <div ref={ref} className="sm:columns-2 gap-x-8 sm:px-10">
-                <p>
+                <p className="pb-3">
                     My name is Dominik Heller. I like writing software with a
                     main interest in front-end web development.
                 </p>
-                <p>
+                <p className="pb-3">
                     During the second semester of my Media Studies master's
                     program at the University of Regensburg I learned the basics
                     of HTML and CSS. Simultaneously approaching digital
@@ -29,7 +29,7 @@ const About = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
                     about learning machines, mostly focusing on the history of
                     Cybernetics and Deep Learning.
                 </p>
-                <p>
+                <p className="pbl-3">
                     In this time and since then I have finished a few projects,
                     some of which I want to display on this page.
                 </p>

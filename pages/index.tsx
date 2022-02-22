@@ -138,10 +138,10 @@ const Home = () => {
                                 : "bg-white text-gray-900"
                         }`}
                     >
-                        <header className="mb-9 z-10">
+                        <header className="flex justify-center items-center flex-col mb-9 z-10">
                             <ThemeSwitch />
                             <Navbar />
-                            <h1 className="text-[2rem] pt-[0.4rem] text-center font-header sm:text-5xl sm:pt-1">
+                            <h1 className="text-[2rem] text-center font-header sm:text-5xl mt-8 mb-[-2rem]">
                                 Dominik's Projects
                             </h1>
                         </header>

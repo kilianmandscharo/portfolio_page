@@ -12,10 +12,6 @@ html {
     scroll-behavior: smooth;
 }
 
-p {
-    margin-bottom: 1rem;
-}
-
 .icon-grid {
     display: grid;
     gap: 2rem;

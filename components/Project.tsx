@@ -57,9 +57,9 @@ const Project = ({ name, img, website, github, description }: ProjectProps) => {
                 <h3 className="text-xl sm:text-xl text-center my-2 text-red-300">
                     {name}
                 </h3>
-                <div className="text-base text-center mb-9 text-white/90">
+                <p className="text-base text-center mb-9 text-white/90">
                     ({description})
-                </div>
+                </p>
                 <div className="flex flex-col text-base gap-4 items-center justify-center">
                     {website && <ProjectLink name="website" link={website} />}
                     {github && <ProjectLink name="github" link={github} />}
