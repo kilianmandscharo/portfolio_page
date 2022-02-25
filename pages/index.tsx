@@ -10,7 +10,7 @@ import ThemeSwitch from "../components/ThemeSwitch";
 import useScroll from "../hooks/useScroll";
 import useWindowSize from "../hooks/useWindowSize";
 
-const ITEM_OFFSET = 60;
+const ITEM_OFFSET = 62;
 
 type Theme = "dark" | "light";
 type ThemeContext = { theme: Theme; toggleTheme: () => void };
@@ -141,7 +141,7 @@ const Home = () => {
                         <header className="flex justify-center items-center flex-col mb-9 z-10">
                             <ThemeSwitch />
                             <Navbar />
-                            <h1 className="text-[2rem] text-center font-header sm:text-5xl mt-8 mb-[-2rem] sm:mb-[-1rem]">
+                            <h1 className="text-5xl text-center font-header sm:text-6xl mt-8 mb-[-2rem] sm:mb-[-1rem]">
                                 Dominik's Projects
                             </h1>
                         </header>

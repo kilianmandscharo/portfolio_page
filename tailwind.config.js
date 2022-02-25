@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "header": ["Oxanium, sans-serif"],
+        "header": ["Passion One, sans-serif"],
         "normal": ["Quicksand, sans-serif"]
       },
       keyframes: {

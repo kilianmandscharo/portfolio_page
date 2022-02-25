@@ -27,7 +27,7 @@ const Section = ({ children, name, highlighted }: SectionProps) => {
                     }`}
                 />
                 <h2
-                    className={`transition-colors ease-linear text-3xl sm:text-4xl font-header text-center mx-2 ${
+                    className={`transition-colors ease-linear text-4xl sm:text-5xl font-header text-center mx-2 ${
                         highlighted ? hightlightedText : nonHighlightedText
                     }`}
                 >
