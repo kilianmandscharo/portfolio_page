@@ -10,7 +10,7 @@ import ThemeSwitch from "../components/ThemeSwitch";
 import useScroll from "../hooks/useScroll";
 import useWindowSize from "../hooks/useWindowSize";
 
-const ITEM_OFFSET = 62;
+const ITEM_OFFSET = 65;
 
 type Theme = "dark" | "light";
 type ThemeContext = { theme: Theme; toggleTheme: () => void };
@@ -107,7 +107,7 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Dominik's Projects</title>
+                <title>Dominik&apos;s Projects</title>
                 <meta
                     name="viewport"
                     content="initial-scale=1.0, width=device-width"
@@ -142,7 +142,7 @@ export default function Home() {
                             <ThemeSwitch />
                             <Navbar />
                             <h1 className="text-5xl text-center font-header sm:text-6xl mt-8 mb-[-2rem] sm:mb-[-1rem]">
-                                Dominik's Projects
+                                Dominik&apos;s Projects
                             </h1>
                         </header>
                         <div className="z-10">
