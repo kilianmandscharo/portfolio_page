@@ -18,7 +18,7 @@ export const ThemeContext = React.createContext<ThemeContext>(
     {} as ThemeContext
 );
 
-const Home = () => {
+export default function Home() {
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
     const [aboutYPosition, setAboutYPosition] = useState(0);
@@ -178,6 +178,4 @@ const Home = () => {
             </ThemeContext.Provider>
         </>
     );
-};
-
-export default Home;
+}

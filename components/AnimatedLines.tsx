@@ -13,7 +13,7 @@ interface AnimatedLinesProps {
     bottomReached: boolean;
 }
 
-const AnimatedLines = ({
+export default function AnimatedLines({
     width,
     height,
     scrollY,
@@ -22,7 +22,7 @@ const AnimatedLines = ({
     skillsYPosition,
     contactYPosition,
     bottomReached,
-}: AnimatedLinesProps) => {
+}: AnimatedLinesProps) {
     const [pathsAnimated, setPathsAnimated] = useState(false);
     const [show, setShow] = useState(false);
     const { theme, toggleTheme } = useContext(ThemeContext);
@@ -208,6 +208,4 @@ const AnimatedLines = ({
     ) : (
         <div></div>
     );
-};
-
-export default AnimatedLines;
+}

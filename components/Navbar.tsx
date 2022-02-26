@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../pages";
 import Contact from "./Contact";
 
-const Navbar = () => {
+export default function Navbar() {
     const { theme, toggleTheme } = useContext(ThemeContext);
 
     return (
@@ -25,5 +25,4 @@ const Navbar = () => {
             </ul>
         </nav>
     );
-};
-export default Navbar;
+}

@@ -6,7 +6,7 @@ interface ProjectLinkProps {
     link: string;
 }
 
-const ProjectLink = ({ name, link }: ProjectLinkProps) => {
+export default function ProjectLink({ name, link }: ProjectLinkProps) {
     const { theme, toggleTheme } = useContext(ThemeContext);
 
     return (
@@ -21,6 +21,4 @@ const ProjectLink = ({ name, link }: ProjectLinkProps) => {
             {name === "github" ? "Github" : "Website"}
         </a>
     );
-};
-
-export default ProjectLink;
+}

@@ -7,7 +7,7 @@ interface SectionProps {
     highlighted: boolean;
 }
 
-const Section = ({ children, name, highlighted }: SectionProps) => {
+export default function Section({ children, name, highlighted }: SectionProps) {
     const { theme, toggleTheme } = useContext(ThemeContext);
     const hightlightedBg = theme === "dark" ? "bg-red-300" : "bg-red-400";
     const hightlightedText = theme === "dark" ? "text-red-300" : "text-red-400";
@@ -42,6 +42,4 @@ const Section = ({ children, name, highlighted }: SectionProps) => {
             <div className="text-[16px] sm:text-xl mt-8">{children}</div>
         </section>
     );
-};
-
-export default Section;
+}

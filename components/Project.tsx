@@ -11,7 +11,13 @@ interface ProjectProps {
     github?: string;
 }
 
-const Project = ({ name, img, website, github, description }: ProjectProps) => {
+export default function Project({
+    name,
+    img,
+    website,
+    github,
+    description,
+}: ProjectProps) {
     const [flip, setFlip] = useState(false);
     const [flipBack, setFlipBack] = useState(false);
     const { theme, toggleTheme } = useContext(ThemeContext);
@@ -80,6 +86,4 @@ const Project = ({ name, img, website, github, description }: ProjectProps) => {
             </div>
         </div>
     );
-};
-
-export default Project;
+}
