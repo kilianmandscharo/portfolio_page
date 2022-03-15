@@ -17,10 +17,17 @@ const Projects = React.forwardRef<HTMLDivElement, SegmentProps>(
                     />
                     <Project
                         name="Wortspiel"
-                        description="TypeScript, React,  Next"
+                        description="TypeScript, React, Next"
                         img="/wortspiel.png"
                         website="https://wortspiel.netlify.app/"
                         github="https://github.com/kilianmandscharo/wortspiel"
+                    />
+                    <Project
+                        name="Musiktraining"
+                        description="TypeScript, React, Next"
+                        img="/notes.png"
+                        website="https://notenlernen.netlify.app/"
+                        github="https://github.com/kilianmandscharo/music_training"
                     />
                     <Project
                         name="Runner App"
