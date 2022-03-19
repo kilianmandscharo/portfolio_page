@@ -19,7 +19,7 @@ const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
                     href="https://github.com/kilianmandscharo"
                     target="blank"
                     className={`flex items-center hover:opacity-70 ${
-                        theme === "dark" ? "bg-gray-300" : ""
+                        theme === "dark" ? "bg-white" : ""
                     } p-2 rounded-xl`}
                 >
                     <Image
@@ -32,7 +32,7 @@ const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
                 <a
                     href="mailto:domi.heller@gmx.de"
                     className={`hover:opacity-70 p-2 rounded-xl ${
-                        theme === "dark" ? "bg-gray-300" : ""
+                        theme === "dark" ? "bg-white" : ""
                     }`}
                 >
                     <svg
