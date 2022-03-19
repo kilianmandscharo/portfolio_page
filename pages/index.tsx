@@ -63,7 +63,9 @@ export default function Home() {
                 setContactYPosition(coRef.offsetTop - ITEM_OFFSET);
             }
         };
-        updateDimensions();
+        setTimeout(() => {
+            updateDimensions();
+        }, 500);
         window.addEventListener("resize", updateDimensions);
         return () => {
             window.removeEventListener("resize", updateDimensions);
