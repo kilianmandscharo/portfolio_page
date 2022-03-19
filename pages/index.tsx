@@ -10,7 +10,7 @@ import ThemeSwitch from "../components/ThemeSwitch";
 import useScroll from "../hooks/useScroll";
 import useWindowSize from "../hooks/useWindowSize";
 
-const ITEM_OFFSET = 65;
+const ITEM_OFFSET = 66;
 
 type Theme = "dark" | "light";
 type ThemeContext = { theme: Theme; toggleTheme: () => void };
