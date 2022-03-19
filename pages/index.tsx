@@ -39,7 +39,7 @@ export default function Home() {
     const [theme, setTheme] = useState<Theme>("dark");
     const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const updateDimensions = () => {
             const cRef: any = containerRef.current;
             const aRef: any = aboutRef.current;
@@ -132,7 +132,7 @@ export default function Home() {
                 >
                     <div
                         ref={containerRef}
-                        className={`grid justify-center max-w-5xl min-w-[350px] relative mx-auto p-5 pt-8 pl-8 font-normal ${
+                        className={`grid justify-center max-w-6xl min-w-[350px] relative mx-auto p-5 pt-8 pl-8 font-normal ${
                             theme === "dark"
                                 ? "bg-gray-900 text-white/90"
                                 : "bg-white text-gray-900"
