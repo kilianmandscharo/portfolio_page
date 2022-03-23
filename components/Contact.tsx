@@ -4,7 +4,7 @@ import { ThemeContext } from "../pages";
 import { SegmentProps } from "./About";
 import Section from "./Section";
 
-const LOGOSIZE = 70;
+const LOGOSIZE = 50;
 
 const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
     const { theme, toggleTheme } = useContext(ThemeContext);
@@ -20,7 +20,7 @@ const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
                     target="blank"
                     className={`flex items-center hover:opacity-70 ${
                         theme === "dark" ? "bg-white" : ""
-                    } p-2 rounded-xl`}
+                    } p-2 rounded-full`}
                 >
                     <Image
                         src="/github_logo.png"
@@ -31,7 +31,7 @@ const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
                 </a>
                 <a
                     href="mailto:domi.heller@gmx.de"
-                    className={`hover:opacity-70 p-2 rounded-xl ${
+                    className={`hover:opacity-70 p-2 rounded-full ${
                         theme === "dark" ? "bg-white" : ""
                     }`}
                 >
