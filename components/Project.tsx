@@ -60,7 +60,7 @@ export default function Project({
                 } transition-colors ease-in rounded-md opacity-0 ${animationsBack()}`}
                 onClick={handleClickBack}
             >
-                <h3 className="text-xl sm:text-xl text-center my-2 text-red-300">
+                <h3 className="text-xl md:text-xl text-center my-2 text-red-300">
                     {name}
                 </h3>
                 <p className="text-base text-center mb-9 text-white/90">
@@ -80,7 +80,7 @@ export default function Project({
                     src={img}
                     width="300"
                     height="300"
-                    className="rounded-md sm:opacity-50 hover:opacity-90 transition-all ease-linear"
+                    className="rounded-md md:opacity-50 hover:opacity-90 transition-all ease-linear"
                     alt={`${name} project image`}
                 />
             </div>

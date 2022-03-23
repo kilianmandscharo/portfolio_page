@@ -143,7 +143,7 @@ export default function Home() {
                         <header className="flex justify-center items-center flex-col mb-9 z-10">
                             <ThemeSwitch />
                             <Navbar />
-                            <h1 className="text-5xl text-center font-header sm:text-6xl mt-8 mb-[-2rem] sm:mb-[-1rem]">
+                            <h1 className="text-5xl text-center font-header md:text-6xl mt-6 mb-[-2rem] md:mb-[-1rem]">
                                 Dominik&apos;s Projects
                             </h1>
                         </header>

@@ -7,7 +7,7 @@ export default function Navbar() {
 
     return (
         <nav className="mb-8 flex justify-center">
-            <ul className="flex flex-row text-[14px] sm:text-base justify-around gap-4 sm:gap-8 pt-[2px] sm:pt-0">
+            <ul className="flex flex-row text-[14px] md:text-lg justify-around mt-[2px] md:mt-[-2px] gap-4 md:gap-8">
                 {["About", "Projects", "Technologies", "Contact"].map(
                     (name) => (
                         <li
@@ -16,7 +16,7 @@ export default function Navbar() {
                                 theme === "dark"
                                     ? "hover:text-red-300"
                                     : "hover:text-red-400"
-                            } transition-all ease-linear`}
+                            } transition-color ease-linear`}
                         >
                             <a href={`#${name.toLowerCase()}`}>{name}</a>
                         </li>

@@ -18,7 +18,7 @@ export default function Section({ children, name, highlighted }: SectionProps) {
     return (
         <section
             id={name.toLowerCase()}
-            className={`p-4 mb-12 pt-8 rounded-md`}
+            className={`p-4 mb-6 md:mb-12 pt-8 rounded-md`}
         >
             <div className="flex justify-around items-center mb-4">
                 <div
@@ -27,7 +27,7 @@ export default function Section({ children, name, highlighted }: SectionProps) {
                     }`}
                 />
                 <h2
-                    className={`transition-colors ease-linear text-4xl sm:text-5xl font-header text-center mx-2 ${
+                    className={`transition-colors ease-linear text-4xl md:text-5xl font-header text-center mx-2 ${
                         highlighted ? hightlightedText : nonHighlightedText
                     }`}
                 >
@@ -39,7 +39,7 @@ export default function Section({ children, name, highlighted }: SectionProps) {
                     }`}
                 />
             </div>
-            <div className="text-[16px] sm:text-xl mt-8">{children}</div>
+            <div className="text-[16px] md:text-xl mt-8">{children}</div>
         </section>
     );
 }

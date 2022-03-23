@@ -17,7 +17,7 @@ import Section from "./Section";
 const Skills = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
     return (
         <Section highlighted={props.highlighted} name="Technologies">
-            <div className="icon-grid px-6 sm:px-16" ref={ref}>
+            <div className="icon-grid px-6 md:px-16" ref={ref}>
                 <HTMLIcon />
                 <CSSIcon />
                 <JSIcon />

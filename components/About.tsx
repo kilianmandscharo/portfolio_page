@@ -8,7 +8,7 @@ export interface SegmentProps {
 const About = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
     return (
         <Section name="About" highlighted={props.highlighted}>
-            <div ref={ref} className="sm:columns-2 gap-x-8 sm:px-10">
+            <div ref={ref} className="md:columns-2 gap-x-8 md:px-10">
                 <p className="pb-3">
                     My name is Dominik Heller. I like writing software with a
                     main interest in front-end web development.
@@ -29,7 +29,7 @@ const About = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
                     thesis about learning machines, mostly focusing on the
                     history of Cybernetics and Deep Learning.
                 </p>
-                <p className="pbl-3">
+                <p className="pb-3">
                     In this time and since then I have finished a few projects,
                     some of which I want to display on this page.
                 </p>
