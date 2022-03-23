@@ -10,8 +10,6 @@ import ThemeSwitch from "../components/ThemeSwitch";
 import useScroll from "../hooks/useScroll";
 import useWindowSize from "../hooks/useWindowSize";
 
-const ITEM_OFFSET = 66;
-
 type Theme = "dark" | "light";
 type ThemeContext = { theme: Theme; toggleTheme: () => void };
 export const ThemeContext = React.createContext<ThemeContext>(
@@ -33,11 +31,13 @@ export default function Home() {
     const skillsRef = useRef(null);
     const contactRef = useRef(null);
 
-    const [_, windowHeight] = useWindowSize();
+    const [windowWidth, windowHeight] = useWindowSize();
     const bottomReached = scrollY + windowHeight >= height - 10;
 
     const [theme, setTheme] = useState<Theme>("dark");
     const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
+
+    const [initialRender, setInitialRender] = useState(false);
 
     useEffect(() => {
         const updateDimensions = () => {
@@ -46,31 +46,36 @@ export default function Home() {
             const pRef: any = projectsRef.current;
             const sRef: any = skillsRef.current;
             const coRef: any = contactRef.current;
+
+            const itemOffset = windowWidth < 768 ? 62 : 66;
             if (cRef) {
                 setWidth(cRef.offsetWidth);
                 setHeight(cRef.offsetHeight);
             }
             if (aRef) {
-                setAboutYPosition(aRef.offsetTop - ITEM_OFFSET);
+                setAboutYPosition(aRef.offsetTop - itemOffset);
             }
             if (pRef) {
-                setProjectsYPosition(pRef.offsetTop - ITEM_OFFSET);
+                setProjectsYPosition(pRef.offsetTop - itemOffset);
             }
             if (sRef) {
-                setSkillsYPosition(sRef.offsetTop - ITEM_OFFSET);
+                setSkillsYPosition(sRef.offsetTop - itemOffset);
             }
             if (coRef) {
-                setContactYPosition(coRef.offsetTop - ITEM_OFFSET);
+                setContactYPosition(coRef.offsetTop - itemOffset);
             }
         };
-        setTimeout(() => {
-            updateDimensions();
-        }, 500);
+        if (!initialRender) {
+            setTimeout(() => {
+                updateDimensions();
+            }, 500);
+        }
+        setInitialRender(true);
         window.addEventListener("resize", updateDimensions);
         return () => {
             window.removeEventListener("resize", updateDimensions);
         };
-    }, []);
+    }, [windowWidth]);
 
     const aboutHighlighted = () => {
         return scrollY >= 0 && scrollY < projectsYPosition - 430;
