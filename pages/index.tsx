@@ -47,7 +47,7 @@ export default function Home() {
             const sRef: any = skillsRef.current;
             const coRef: any = contactRef.current;
 
-            const itemOffset = windowWidth < 768 ? 62 : 66;
+            const itemOffset = window.innerWidth < 768 ? 62 : 66;
             if (cRef) {
                 setWidth(cRef.offsetWidth);
                 setHeight(cRef.offsetHeight);
