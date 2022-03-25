@@ -1,5 +1,6 @@
 import React from "react";
 import Section from "./Section";
+import { react as AboutComponent } from "../content/pages/about.md";
 
 export interface SegmentProps {
     highlighted: boolean;
@@ -9,7 +10,8 @@ const About = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
     return (
         <Section name="About" highlighted={props.highlighted}>
             <div ref={ref} className="md:columns-2 gap-x-8 md:px-10">
-                <p className="pb-3">
+                <AboutComponent />
+                {/* <p className="pb-3">
                     My name is Dominik Heller. I like writing software with a
                     main interest in front-end web development.
                 </p>
@@ -32,7 +34,7 @@ const About = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
                 <p className="pb-3">
                     In this time and since then I have finished a few projects,
                     some of which I want to display on this page.
-                </p>
+                </p> */}
             </div>
         </Section>
     );
