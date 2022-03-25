@@ -11,46 +11,46 @@ const Projects = React.forwardRef<HTMLDivElement, SegmentProps>(
                     <Project
                         name="Visualizing Algorithms"
                         description="TypeScript, React"
-                        img="/algorithms.png"
+                        img="/images/algorithms.png"
                         website="https://visualize-algorithms.netlify.app/"
                         github="https://github.com/kilianmandscharo/visualize_algorithms"
                     />
                     <Project
                         name="Wortspiel"
                         description="TypeScript, React, Next"
-                        img="/wortspiel.png"
+                        img="/images/wortspiel.png"
                         website="https://wortspiel.netlify.app/"
                         github="https://github.com/kilianmandscharo/wortspiel"
                     />
                     <Project
                         name="Musikgym"
                         description="TypeScript, React, Next"
-                        img="/notes.png"
+                        img="/images/notes.png"
                         website="https://musikgym.netlify.app/"
                         github="https://github.com/kilianmandscharo/music_training"
                     />
                     <Project
                         name="Runner App"
                         description="TypeScript, React Native"
-                        img="/runner.png"
+                        img="/images/runner.png"
                         github="https://github.com/kilianmandscharo/running_app"
                     />
                     <Project
                         name="Darts Optimizer"
                         description="Python, Numpy, Matplotlib"
-                        img="/darts.png"
+                        img="/images/darts.png"
                         github="https://github.com/kilianmandscharo/darts_visualization"
                     />
                     <Project
                         name="Snake"
                         description="C, ncurses"
-                        img="/snake.png"
+                        img="/images/snake.png"
                         github="https://github.com/kilianmandscharo/snake"
                     />
                     <Project
                         name="Visualizing Algorithms 2"
                         description="Python, Tkinter"
-                        img="/algorithms2.png"
+                        img="/images/algorithms2.png"
                         github="https://github.com/kilianmandscharo/algovis"
                     />
                 </div>

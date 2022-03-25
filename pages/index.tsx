@@ -129,7 +129,7 @@ export default function Home() {
                     name="keywords"
                     content="portfolio, front-end, programming"
                 />
-                <link rel="shortcut icon" href="favicon.ico" />
+                <link rel="shortcut icon" href="/favicon/favicon.ico" />
             </Head>
             <ThemeContext.Provider value={{ theme, toggleTheme }}>
                 <div
