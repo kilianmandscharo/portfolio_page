@@ -23,7 +23,7 @@ const Contact = React.forwardRef<HTMLDivElement, SegmentProps>((props, ref) => {
                     } p-2 rounded-full`}
                 >
                     <Image
-                        src="/github_logo.png"
+                        src="/images/github_logo.png"
                         alt="github logo"
                         width={LOGOSIZE}
                         height={LOGOSIZE}
