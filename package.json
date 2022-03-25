@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export"
+    "export": "npm run build && next export"
   },
   "dependencies": {
     "frontmatter-markdown-loader": "^3.6.3",
